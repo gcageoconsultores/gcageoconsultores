@@ -2,148 +2,122 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GCA Geociencias Aplicadas SAS</title>
- 
-<!-- Fuente similar desde Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
-
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-<!-- Estilos personalizados -->
-
-<style>
-  body {
-    font-family: 'Nunito', sans-serif; /* Fuente similar a Eras Bold */
-    background-color: #FFFFFF;
-    color: #594E40;
-  }
-
-  .navbar {
-    background-color: #594E40;
-  }
-
-  .navbar-brand, .nav-link {
-    color: #FFFFFF !important;
-  }
-
-  .header {
-    background-image: url('logo.jpg'); /* Cambia esta ruta si es necesario */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ffffff;
-    padding: 6rem 2rem;
-    text-align: center;
-  }
-
-  .section-title {
-    color: #594E40;
-  }
-
-  .btn-custom {
-    background-color: #594E40;
-    color: #FFFFFF;
-    border: none;
-  }
-
-  .btn-custom:hover {
-    background-color: #C0B59B;
-    color: #594E40;
-  }
-
-  footer {
-    background-color: #594E40;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 1rem 0;
-  }
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCA - Geociencias Aplicadas SAS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #594E40;
+    }
+    .header {
+      background-color: #C0B59B;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .header img {
+      max-width: 150px;
+      margin-bottom: 1rem;
+    }
+    .header h1 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    .subtitulo {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .btn-nosotros {
+      background-color: #594E40;
+      color: white;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      margin-top: 1rem;
+    }
+    .seccion {
+      padding: 2rem 1rem;
+    }
+    .icono-servicio {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+    .bloque-servicio {
+      background-color: #594E40;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .contacto {
+      background-color: #C0B59B;
+      padding: 2rem;
+      color: #594E40;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">GCA Geociencias Aplicadas SAS</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <header class="header">
+    <img src="GCA_fondo.png" alt="Logo GCA">
+    <h1>Geociencias Aplicadas</h1>
+    <p class="subtitulo">Consultoría Geológica</p>
+    <a href="#nosotros" class="btn btn-nosotros">Nosotros</a>
+  </header>
 
-<!-- Hero Section -->
-<section id="inicio" class="py-5 bg-light text-center">
-  <div class="container">
-    <h1 class="display-5">Bienvenido a GCA Geociencias Aplicadas SAS</h1>
-    <p class="lead">Soluciones personalizadas en geología, SIG, medioambiente y análisis técnico especializado.</p>
-  </div>
-</section>
+  <section id="nosotros" class="seccion text-center">
+    <h2>GCA - Geociencias Aplicadas SAS</h2>
+    <p>Se enfoca en la solución de problemas geológicos aprovechables para la industria, empresas y pequeños negocios.</p>
+    <p>En diferentes campos como:</p>
+  </section>
 
-<!-- Servicios -->
-<section id="servicios" class="py-5">
-  <div class="container">
-    <h2 class="mb-4">Nuestros Servicios</h2>
+  <section class="container">
     <div class="row">
       <div class="col-md-4">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Consultoría Geológica</h5>
-            <p class="card-text">Asesorías en exploración, geotecnia y análisis estructural.</p>
-          </div>
+        <div class="bloque-servicio">
+          <i class="fas fa-hard-hat icono-servicio"></i>
+          <h4>Minería</h4>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">SIG & Cartografía</h5>
-            <p class="card-text">Diseño e implementación de sistemas de información geográfica.</p>
-          </div>
+        <div class="bloque-servicio">
+          <i class="fas fa-oil-can icono-servicio"></i>
+          <h4>Hidrocarburos</h4>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Capacitación Técnica</h5>
-            <p class="card-text">Talleres, cursos y entrenamientos personalizados.</p>
-          </div>
+        <div class="bloque-servicio">
+          <i class="fas fa-globe icono-servicio"></i>
+          <h4>Geofísica y SIG</h4>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bloque-servicio">
+          <i class="fas fa-mountain icono-servicio"></i>
+          <h4>Geotecnia</h4>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bloque-servicio">
+          <i class="fas fa-water icono-servicio"></i>
+          <h4>Agua y Medio Ambiente</h4>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Proyectos -->
-<section id="proyectos" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="mb-4">Proyectos Recientes</h2>
-    <p>Hemos trabajado con instituciones y empresas del sector público y privado, desarrollando soluciones técnicas de alto impacto.</p>
-  </div>
-</section>
+  <section id="contacto" class="contacto text-center">
+    <h2>Contacto</h2>
+    <p>¿Tienes un proyecto o necesitas asesoría? Escríbenos a:</p>
+    <p><a href="mailto:contacto@gcageociencias.com" class="text-dark">contacto@gcageociencias.com</a></p>
+  </section>
 
-<!-- Contacto -->
-<section id="contacto" class="py-5">
-  <div class="container">
-    <h2 class="mb-4">Contacto</h2>
-    <p>Email: <a href="mailto:gcageociencias@gmail.com">consultoria@ejemplo.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/573057287714">+57 305 728 7714</a></p>
-  </div>
-</section>
+  <footer class="text-center py-3" style="background-color: #594E40; color: white;">
+    <p>&copy; 2025 GCA - Geociencias Aplicadas SAS</p>
+  </footer>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-3">
-  &copy; 2025 GCA Geociencias Aplicadas SAS. Todos los derechos reservados.
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
