@@ -21,63 +21,50 @@
       background-color: #FFFFFF;
       color: #594E40;
     }
-
-     h1, h2, h3, h4, h5, h6 {
-      font-weight: 600; /* Letras más gruesas para los títulos */
+    .top-bar {
+      background-color: #C0B59B;
+      padding: 5px 0;
+      font-size: 14px;
     }
-
-    p {
-      font-weight: 400;
-    }
-
-    .logo-container {
-      background-color: #FFFFFF;
-    }
-    .logo-img {
-      max-height: 80px; /* Puedes ajustar a 180px o más si quieres */
-      width: auto;
-    }
-  
     .navbar {
-      background: linear-gradient(to right, #594E40, #C0B59B);
-      padding: 0.5rem 1rem;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     }
-
     .navbar-brand img {
       height: 50px;
-      margin-right: 10px;
     }
-
-    .banner {
-      width: 100%;
+    .sticky-top {
+      top: 0;
+      z-index: 1020;
+    }
+    .hero-section {
+      background: url('ruta-de-tu-banner.jpg') center/cover no-repeat;
       height: 90vh;
-      background-image: url('banner.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .services {
-      padding: 50px 20px;
-      background-color: #F5F5F5;
-      text-align: center;
-    }
-
-    .services .card {
-      border: none;
-      background-color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .services .card:hover {
-      transform: translateY(-10px);
-    }
-
-    .footer {
-      background: #594E40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    .service-card {
+      height: 100%;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 20px;
       text-align: center;
-      padding: 20px 0;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .team-section, .values-section {
+      padding: 60px 0;
+      background-color: #f4f4f4;
+    }
+    .footer {
+      background-color: #594E40;
+      color: #fff;
+      padding: 40px 0;
     }
 
     .whatsapp-button {
@@ -101,41 +88,44 @@
 
 <body>
 
-  <!-- Sección superior del logo -->
-  <div class="logo-container text-center py-3">
-    <img src="logo.png" alt="Logo GCA" class="logo-img">
+  <!-- Top Bar -->
+  <div class="top-bar text-center">
+    <span><i class="bi bi-envelope"></i> contacto@gca.com | <i class="bi bi-facebook"></i> /GCA | <i class="bi bi-instagram"></i> @GCA</span>
   </div>
 
-  <!-- Menú de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #594E40;">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">GCA Geociencias Aplicadas SAS</a>
+      <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo GCA"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
+            <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown">Servicios</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="servicio-mineria.html">Geotermia</a></li>
-              <li><a class="dropdown-item" href="servicio-hidrocarburos.html">Recursos Hídricos</a></li>
-              <li><a class="dropdown-item" href="servicio-geofisica.html">Geofísica</a></li>
-              <li><a class="dropdown-item" href="servicio-geotecnia.html">Geotecnia</a></li>
-              <li><a class="dropdown-item" href="servicio-agua.html">Medio Ambiente y Geo-Ecosistema</a></li>
-              <li><a class="dropdown-item" href="servicio-sig.html">SIG</a></li>
+              <li><a class="dropdown-item" href="geotermia.html">Geotermia</a></li>
+              <li><a class="dropdown-item" href="recursos-hidricos.html">Recursos Hídricos</a></li>
+              <li><a class="dropdown-item" href="medio-ambiente.html">Medio Ambiente</a></li>
+              <li><a class="dropdown-item" href="geotecnia.html">Geotecnia</a></li>
+              <li><a class="dropdown-item" href="geofisica.html">Geofísica</a></li>
+              <li><a class="dropdown-item" href="sig.html">SIG</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Sección Banner -->
-  <div class="banner"></div>
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>GCA Geociencias Aplicadas SAS</h1>
+  </div>
+
 
   <!-- Sección de saludo y descripcción -->
   <section class="bienvenida text-center py-5">
@@ -226,10 +216,35 @@
     </div>
   </section>
 
+  
+  <!-- Nuestro Equipo -->
+  <section class="team-section text-center">
+    <div class="container">
+      <h2>Nuestro Equipo</h2>
+      <p>Profesionales expertos comprometidos con brindar soluciones de alta calidad en cada proyecto.</p>
+    </div>
+  </section>
+
+  <!-- Nuestros Valores -->
+  <section class="values-section text-center">
+    <div class="container">
+      <h2>Nuestros Valores</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-2"><h5>Integridad</h5><p>Actuamos con transparencia y ética profesional.</p></div>
+        <div class="col-md-2"><h5>Innovación</h5><p>Buscamos soluciones creativas y eficientes.</p></div>
+        <div class="col-md-2"><h5>Excelencia</h5><p>Compromiso con resultados de alta calidad.</p></div>
+        <div class="col-md-2"><h5>Responsabilidad</h5><p>Respetamos el medioambiente y las comunidades.</p></div>
+        <div class="col-md-2"><h5>Colaboración</h5><p>Fomentamos el trabajo en equipo y la cooperación.</p></div>
+        <div class="col-md-2"><h5>Pasión</h5><p>Trabajamos con entusiasmo en cada proyecto.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <p>© 2025 GCA - Geociencias Aplicadas SAS</p>
+    <div class="container text-center">
+      <p>&copy; 2025 GCA Geociencias Aplicadas SAS. Todos los derechos reservados.</p>
+      <p>Especialistas en Geología, Geotecnia, Recursos Hídricos, Medio Ambiente y SIG.</p>
     </div>
   </footer>
 
