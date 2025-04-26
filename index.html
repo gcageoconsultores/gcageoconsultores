@@ -14,7 +14,7 @@
   
   <!-- Google Fonts: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -29,7 +29,15 @@
     p {
       font-weight: 400;
     }
-    
+
+    .logo-container {
+      background-color: #FFFFFF;
+    }
+    .logo-img {
+      max-height: 150px; /* Puedes ajustar a 180px o más si quieres */
+      width: auto;
+    }
+  
     .navbar {
       background: linear-gradient(to right, #594E40, #C0B59B);
       padding: 0.5rem 1rem;
@@ -92,38 +100,35 @@
 
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+
+  <!-- Sección superior del logo -->
+  <div class="logo-container text-center py-3">
+    <img src="ruta-de-tu-logo.png" alt="Logo GCA" class="logo-img">
+  </div>
+
+  <!-- Menú de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #594E40;">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="logo.jpg" alt="Logo GCA">
-        <span>GCA - Geociencias Aplicadas SAS</span>
-      </a>
+      <a class="navbar-brand" href="#">GCA Geociencias Aplicadas SAS</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown">Servicios</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="mineria.html">Minería</a></li>
-              <li><a class="dropdown-item" href="hidrocarburos.html">Hidrocarburos</a></li>
-              <li><a class="dropdown-item" href="geofisica.html">Geofísica</a></li>
-              <li><a class="dropdown-item" href="geotecnia.html">Geotecnia</a></li>
-              <li><a class="dropdown-item" href="agua.html">Agua y Medio Ambiente</a></li>
-              <li><a class="dropdown-item" href="sig.html">SIG</a></li>
+              <li><a class="dropdown-item" href="servicio-mineria.html">Minería</a></li>
+              <li><a class="dropdown-item" href="servicio-hidrocarburos.html">Hidrocarburos</a></li>
+              <li><a class="dropdown-item" href="servicio-geofisica.html">Geofísica</a></li>
+              <li><a class="dropdown-item" href="servicio-geotecnia.html">Geotecnia</a></li>
+              <li><a class="dropdown-item" href="servicio-agua.html">Agua y Medio Ambiente</a></li>
+              <li><a class="dropdown-item" href="servicio-sig.html">SIG</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="proyectos.html">Proyectos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contáctanos</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
@@ -139,7 +144,6 @@
           <p>Soluciones personalizadas en geología, SIG, medioambiente y análisis técnico especializado.</p>
       </div>
   </section>
-
  
   <!-- Sección de Servicios -->
   <section class="services">
