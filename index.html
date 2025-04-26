@@ -12,6 +12,13 @@
       background-color: #ffffff;
       color: #594E40;
     }
+    .navbar {
+      background-color: #C0B59B;
+    }
+    .navbar-nav .nav-link {
+      color: #594E40;
+      font-weight: bold;
+    }
     .header {
       background-color: #C0B59B;
       padding: 2rem 1rem;
@@ -25,16 +32,9 @@
       font-weight: bold;
       font-size: 2rem;
     }
-    .subtitulo {
-      font-size: 1.2rem;
-      font-weight: 500;
-    }
-    .btn-nosotros {
-      background-color: #594E40;
-      color: white;
-      border-radius: 30px;
-      padding: 0.5rem 2rem;
-      margin-top: 1rem;
+    .banner {
+      background: url('banner.jpg') no-repeat center center/cover;
+      height: 100vh;
     }
     .seccion {
       padding: 2rem 1rem;
@@ -57,67 +57,116 @@
       padding: 2rem;
       color: #594E40;
     }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .whatsapp img {
+      width: 60px;
+    }
   </style>
 </head>
 <body>
 
-  <header class="header">
-    <img src="logo.jpg" alt="Logo GCA">
-    <h1>Geociencias Aplicadas</h1>
-    <p class="subtitulo">Consultoría Geológica</p>
-    <a href="#nosotros" class="btn btn-nosotros">Nosotros</a>
-  </header>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#inicio">
+      <img src="logo.png" alt="Logo" width="50">
+      GCA
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#inicio">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#mineria">Minería</a></li>
+            <li><a class="dropdown-item" href="#hidrocarburos">Hidrocarburos</a></li>
+            <li><a class="dropdown-item" href="#geofisica">Geofísica</a></li>
+            <li><a class="dropdown-item" href="#geotecnia">Geotecnia</a></li>
+            <li><a class="dropdown-item" href="#agua">Agua y Medio Ambiente</a></li>
+            <li><a class="dropdown-item" href="#sig">SIG</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Proyectos</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#proyectos">Listado de Proyectos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <section id="nosotros" class="seccion text-center">
-    <h2>GCA - Geociencias Aplicadas SAS</h2>
-    <p>Se enfoca en la solución de problemas geológicos aprovechables para la industria, empresas y pequeños negocios.</p>
-    <p>En diferentes campos como:</p>
-  </section>
+<header id="inicio" class="header">
+  <img src="logo.png" alt="Logo GCA">
+  <h1>Geociencias Aplicadas</h1>
+  <p class="subtitulo">Consultoría Geológica</p>
+</header>
 
-  <section class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="bloque-servicio">
-          <i class="fas fa-hard-hat icono-servicio"></i>
-          <h4>Minería</h4>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="bloque-servicio">
-          <i class="fas fa-oil-can icono-servicio"></i>
-          <h4>Hidrocarburos</h4>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="bloque-servicio">
-          <i class="fas fa-globe icono-servicio"></i>
-          <h4>Geofísica y SIG</h4>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="bloque-servicio">
-          <i class="fas fa-mountain icono-servicio"></i>
-          <h4>Geotecnia</h4>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="bloque-servicio">
-          <i class="fas fa-water icono-servicio"></i>
-          <h4>Agua y Medio Ambiente</h4>
-        </div>
+<section class="banner"></section>
+
+<section id="servicios" class="container seccion">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="bloque-servicio" id="mineria">
+        <h4>Minería</h4>
       </div>
     </div>
-  </section>
+    <div class="col-md-4">
+      <div class="bloque-servicio" id="hidrocarburos">
+        <h4>Hidrocarburos</h4>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="bloque-servicio" id="geofisica">
+        <h4>Geofísica</h4>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="bloque-servicio" id="geotecnia">
+        <h4>Geotecnia</h4>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="bloque-servicio" id="agua">
+        <h4>Agua y Medio Ambiente</h4>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="bloque-servicio" id="sig">
+        <h4>SIG</h4>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section id="contacto" class="contacto text-center">
-    <h2>Contacto</h2>
-    <p>¿Tienes un proyecto o necesitas asesoría? Escríbenos a:</p>
-    <p><a href="mailto:contacto@gcageociencias.com" class="text-dark">gcageociencias@gmail.com</a></p>
-  </section>
+<section id="contacto" class="contacto text-center">
+  <h2>Contacto</h2>
+  <p>¿Tienes un proyecto o necesitas asesoría? Escríbenos a:</p>
+  <p><a href="mailto:contacto@gcageociencias.com" class="text-dark">contacto@gcageociencias.com</a></p>
+</section>
 
-  <footer class="text-center py-3" style="background-color: #594E40; color: white;">
-    <p>&copy; 2025 GCA - Geociencias Aplicadas SAS</p>
-  </footer>
+<a href="https://wa.me/573001112233" target="_blank" class="whatsapp">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+</a>
+
+<footer class="text-center py-3" style="background-color: #594E40; color: white;">
+  <p>&copy; 2025 GCA - Geociencias Aplicadas SAS</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
