@@ -146,40 +146,45 @@
     </div>
   </nav>
 
-<!-- Sección de Banner con Carrusel -->
-<section id="banner">
-  <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="carousel-item">
-          <div class="carousel-item active">
-        <img src="banner4.jpg" class="d-block w-100" alt="Banner 4">
-      </div> 
-      <div class="carousel-item active">
-        <img src="banner5.jpg" class="d-block w-100" alt="Banner 5">
-      </div>     
-      <div class="carousel-item active">
-        <img src="banner7.jpg" class="d-block w-100" alt="Banner 7">
-      </div>
-      <div class="carousel-item active">
-        <img src="banner8.jpg" class="d-block w-100" alt="Banner 8">
-      </div>
-      <div class="carousel-item active">
-        <img src="banner9.jpg" class="d-block w-100" alt="Banner 9">
+<!-- Banner Carrusel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+  <div class="carousel-inner" style="height: 600px; overflow: hidden; position: relative;">
+    
+    <div class="carousel-item active">
+      <img src="banner8.jpg" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="Imagen 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Tu Título 1</h2>
+        <p>Tu descripción breve 1</p>
       </div>
     </div>
-    
-    <!-- Controles opcionales (si quieres permitir mover manualmente) -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Siguiente</span>
-    </button>
+
+    <div class="carousel-item">
+      <img src="banner9.jpg" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="Imagen 2">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Tu Título 2</h2>
+        <p>Tu descripción breve 2</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="banner5.jpg" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="Imagen 3">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Tu Título 3</h2>
+        <p>Tu descripción breve 3</p>
+      </div>
+    </div>
+
   </div>
-</section>
+
+  <!-- Botones de control -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
 
 
   <!-- Sección de saludo y descripcción -->
