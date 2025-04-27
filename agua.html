@@ -1,40 +1,291 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recursos Hídricos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCA - Geociencias Aplicadas SAS</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Eras+Bold+ITC&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <style>
     body {
-      font-family: 'Eras Bold ITC', sans-serif;
-      background-color: #fff;
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFFFFF;
       color: #594E40;
     }
-    .banner {
-      height: 300px;
-      background: linear-gradient(to right, #594E40, #C0B59B);
+    .top-bar {
+      background-color: #C0B59B;
+      padding: 5px 0;
+      font-size: 14px;
+    }
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    .navbar-brand img {
+      height: 80px;
+    }
+    .sticky-top {
+      top: 0;
+      z-index: 1020;
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
     }
-    .btn-volver {
+    .service-card {
+      height: 100%;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .team-section, .values-section {
+      padding: 60px 0;
+      background-color: #f4f4f4;
+    }
+    .footer {
       background-color: #594E40;
+      color: #fff;
+      padding: 40px 0;
+    }    
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(to right, #594E40, #C0B59B);
       color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      z-index: 1000;
+    }    
+    .service-icon {
+      width: 300px; /* Ajusta el ancho que prefieras */
+      height: 300px; /* Ajusta el alto que prefieras */
+      object-fit: contain; /* Para que no se deformen */
+      margin: 0 auto 20px auto; /* Centrado y espacio abajo */
+      display: block;
+    }    
+    .division-imagen-parallax {
+      position: relative;
+      width: 100%;
+      height: 300px; /* puedes ajustar el alto si quieres */
+      overflow: hidden;
     }
-    .btn-volver:hover {
-      background-color: #C0B59B;
-      color: #594E40;
+    .parallax {
+      background-image: url('division-imagen.png'); /* Asegúrate que sea la ruta correcta */
+      height: 100%;
+      background-attachment: fixed; /* Hace el efecto parallax */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   </style>
 </head>
+
+  
 <body>
-  <div class="banner">
-    <h1>RECURSOS HÍDRICOS (Hidrogeología e Hidrología)</h1>
+  <!-- Top Bar -->
+  <div class="top-bar text-center">
+    <span><i class="bi bi-envelope"></i> gcageociencias@gmail.com | <i class="bi bi-facebook"></i> /GCA | <i class="bi bi-instagram"></i> @GCA</span>
   </div>
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo GCA"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown">Servicios</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="geotermia.html">Geotermia</a></li>
+              <li><a class="dropdown-item" href="recursos-hidricos.html">Recursos Hídricos</a></li>
+              <li><a class="dropdown-item" href="medio-ambiente.html">Medio Ambiente</a></li>
+              <li><a class="dropdown-item" href="geotecnia.html">Geotecnia</a></li>
+              <li><a class="dropdown-item" href="geofisica.html">Geofísica</a></li>
+              <li><a class="dropdown-item" href="sig.html">SIG</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- Sección de servicio y descripcción -->
+  <section class="bienvenida text-center py-5">
+      <div class="container">
+          <h2>Bienvenido a GCA Geociencias Aplicadas SAS</h2>
+          <p>Soluciones personalizadas en geología, SIG, medioambiente y análisis técnico especializado.</p>
+          <p>GCA Geociencias Aplicadas SAS, con más de 10 años de experiencia en nuestras materias, es una consultoría que ofrece servicios de Medio Ambiente, Geotecnia y GIS.
+              Te asesoramos ante un estudio de impacto ambiental o la realización de la documentación ambiental que necesites (Autorización Ambiental Unificada, Calificación Ambiental, Evaluación Ambiental Estratégica, Restauración Paisajística, Planes de Vigilancia, etc…). Especialistas en asesoramiento legal en medio ambiente y cuestiones urbanísticas.
+              Nuestro equipo de Geólogos, son especialistas en el ámbito de la ingeniería del terreno: estudios geotécnicos, informes periciales, patología de cimentaciones e inestabilidad de laderas, proyectos de refuerzo y contención de tierras, estudios de riesgos sísmicos y geológicos así como ensayos especiales en geotecnia. Contamos con equipos de nuestra propiedad, garantizando un estudio geotécnico de calidad, eficaz y económico. Acreditados por la Junta de Andalucía y siempre bajo visado colegial.
+              Geobiental a través de técnicas avanzadas de modelado 3D, ofrece infografías detalladas con un acabado hiperrealista para transmitir una idea fiel del acabado final de un proyecto o vivienda: Renders, Integraciones, Diseño de interiores, Recorridos virtuales, Videos y Animaciones.
+              Te invitamos a descubrir nuestros servicios, quienes somos y últimos trabajos con este paseo a través de nuestra Web
+          </p>
+      </div>
+  </section>
+ 
+<!-- Sección de Servicios -->
+<section class="services py-5">
+  <div class="container">
+    <h2 class="mb-5 text-center">Nuestros Servicios</h2>
+    <div class="row g-4">
+      <div class="col-md-4 d-flex align-items-stretch">
+        <a href="geotermia.html" class="w-100 text-decoration-none">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="p-4">
+              <img src="icon-geotermia.png" class="service-icon" alt="Geotermia">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Geotermia</h5>
+              <p class="card-text">Exploramos y evaluamos recursos geotérmicos para impulsar proyectos de energía limpia y sostenible.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex align-items-stretch">
+        <a href="agua.html" class="w-100 text-decoration-none">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="p-4">
+              <img src="icon-recursos_hidricos.png" class="service-icon" alt="Recursos Hídricos">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Recursos Hídricos</h5>
+              <p class="card-text">Evaluamos y gestionamos los recursos hídricos subterráneos y superficiales para el desarrollo sostenible de proyectos y el ecosistema.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex align-items-stretch">
+        <a href="ambiente.html" class="w-100 text-decoration-none">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="p-4">
+              <img src="icon-ambiente.png" class="service-icon" alt="Geo-Ecosistema">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Medio Ambiente y Geo-Ecosistema</h5>
+              <p class="card-text">Gestionamos los recursos hídricos y ambientales desde el geo-ecosistema para garantizar el desarrollo sostenible y el cumplimiento normativo.</p>                
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex align-items-stretch">
+        <a href="geotecnia.html" class="w-100 text-decoration-none">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="p-4">
+              <img src="icon-geotecnia.png" class="service-icon" alt="Geotecnia">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Geotecnia</h5>
+              <p class="card-text">Evaluamos las condiciones del terreno para diseñar soluciones seguras y eficientes en proyectos de ingeniería, exploración, geotecnia y análisis estructural.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex align-items-stretch">
+        <a href="sig.html" class="w-100 text-decoration-none">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="p-4">
+              <img src="icon-sig.png" class="service-icon" alt="SIG">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">SIG</h5>
+              <p class="card-text">Diseño e implementación de sistemas de información geográfica que optimizan la gestión territorial y ambiental.</p>                               
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex align-items-stretch">
+        <a href="geofisica.html" class="w-100 text-decoration-none">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="p-4">
+              <img src="icon-geofisica.png" class="service-icon" alt="Geofísica">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Geofísica</h5>
+              <p class="card-text">Aplicamos métodos geofísicos avanzados para revelar las estructuras ocultas del subsuelo y optimizar el desarrollo de proyectos.</p>                
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex align-items-stretch">
+        <a href="avr.html" class="w-100 text-decoration-none">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="p-4">
+              <img src="icon-avr.png" class="service-icon" alt="AVR">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Amenaza, Vulnerabilidad y Riesgo</h5>
+              <p class="card-text">Identificamos, analizamos y gestionamos amenazas, vulnerabilidades y riesgos para garantizar el desarrollo seguro y sostenible de tus proyectos.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- División con Imagen - efecto Parallax -->
+<section class="division-imagen-parallax">
+  <div class="parallax"></div>
+</section>
+
+  
+  <!-- Nuestro Equipo -->
+  <section class="team-section text-center">
+    <div class="container">
+      <h2>Nuestro Equipo</h2>
+      <p>Profesionales expertos comprometidos con brindar soluciones de alta calidad en cada proyecto.</p>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  
   <div class="container py-5">
     <h2>Exploración</h2>
     <p>Desarrollamos modelos hidrogeológicos conceptuales y numéricos, cálculos de balance hídrico, pruebas de bombeo y estimaciones de reservas hídricas subterráneas.</p>
@@ -50,15 +301,19 @@
     <p>Analisis geológico y geomorfológico de los cuerpos de agua, dinámica aluvial, cambios de cauce, entre otros.</p>
       
             
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2025 GCA Geociencias Aplicadas SAS. Todos los derechos reservados.</p>
+      <p>Especialistas en Geología, Geotecnia, Recursos Hídricos, Medio Ambiente y SIG.</p>
+    </div>
+  </footer>
 
-    <h3>Proyectos Relacionados</h3>
-    <ul>
-      <li>Proyecto 1</li>
-      <li>Proyecto 2</li>
-      <li>Proyecto 3</li>
-    </ul>
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/573057287714" class="whatsapp-button" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
 
-    <a href="index.html" class="btn btn-volver mt-4">← Volver al inicio</a>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+
