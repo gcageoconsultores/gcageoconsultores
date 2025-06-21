@@ -94,50 +94,488 @@
   </div>
 </nav>
 
-<!-- Banner de encabezado -->
-<header class="text-white text-center py-5 section-green">
+<!-- Cabecera con imagen destacada -->
+<section class="bienvenida text-center text-white py-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Imagenes/geotermia-colombia.jpg'); background-size: cover; background-position: center;">
   <div class="container">
-    <h1 class="fw-bold">Geotermia</h1>
-    <p class="lead">Energía renovable que proviene del interior de la Tierra</p>
+    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">ENERGÍA GEOTÉRMICA EN COLOMBIA</h1>
+    <p class="lead" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); max-width: 800px; margin: 0 auto;">
+      Explorando el potencial del calor terrestre: Tecnología, aplicaciones y marco regulatorio para la transición energética
+    </p>
   </div>
-</header>
+</section>
+
+<!-- Barra de navegación interna -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGeotermia">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarGeotermia">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#introduccion">Introducción</a></li>
+        <li class="nav-item"><a class="nav-link" href="#potencial">Potencial en Colombia</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tecnologia">Tecnología</a></li>
+        <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#normativa">Marco Normativo</a></li>
+        <li class="nav-item"><a class="nav-link" href="#casos">Casos de Estudio</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!-- Contenido principal -->
-<main class="container py-5 blog-green">
-  <section class="mb-5">
-    <h2 class="fw-bold">¿Qué es la geotermia?</h2>
-    <p>La geotermia es una fuente de energía limpia y sostenible que aprovecha el calor natural almacenado en el interior de la Tierra. Este calor puede utilizarse directamente para calefacción, climatización o generar electricidad mediante plantas geotérmicas.</p>
-    <img src="imagenes/geotermia_1.jpg" alt="Esquema geotérmico" class="blog-img">
+<main class="container py-5">
+  <!-- Introducción -->
+  <section id="introduccion" class="mb-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="fw-bold border-bottom pb-2">¿Qué es la energía geotérmica?</h2>
+        <p>La energía geotérmica es una fuente renovable que aprovecha el calor interno de la Tierra, generado por:</p>
+        <ul>
+          <li>Desintegración radiactiva de isótopos (uranio-238, torio-232, potasio-40)</li>
+          <li>Calor residual de la formación planetaria</li>
+          <li>Procesos de convección del manto terrestre</li>
+        </ul>
+        <p>Este calor se manifiesta como fluidos hidrotermales (agua/vapor) y rocas calientes, con temperaturas que varían desde 30°C hasta más de 300°C según la profundidad y actividad tectónica.</p>
+      </div>
+      <div class="col-lg-6">
+        <img src="Imagenes/Geotermia/esquema-sistema-terrestre.jpg" alt="Esquema del sistema geotérmico terrestre" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 1. Fuentes de calor en el interior terrestre</figcaption>
+      </div>
+    </div>
   </section>
 
-  <section class="mb-5">
-    <h2 class="fw-bold">¿Para qué sirve la geotermia?</h2>
-    <p>Se aplica en calefacción de viviendas, producción de energía eléctrica, balnearios, invernaderos y procesos industriales. Su uso disminuye la dependencia de combustibles fósiles y reduce significativamente las emisiones de CO₂.</p>
-    <img src="imagenes/geotermia_2.jpg" alt="Aplicaciones geotérmicas" class="blog-img">
+  <!-- Potencial en Colombia -->
+  <section id="potencial" class="mb-5 py-4 bg-light rounded">
+    <h2 class="fw-bold border-bottom pb-2">Potencial Geotérmico en Colombia</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4 class="text-primary">Zonas de Alto Potencial</h4>
+        <p>Colombia, ubicada en el Cinturón de Fuego del Pacífico, cuenta con áreas volcánicas promisorias identificadas por el Servicio Geológico Colombiano (SGC):</p>
+        
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead class="table-primary">
+              <tr>
+                <th>Región</th>
+                <th>Temperatura</th>
+                <th>Potencial Estimado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Paipa-Tibasosa (Boyacá)</td>
+                <td>100-150°C</td>
+                <td>Media</td>
+              </tr>
+              <tr>
+                <td>Azufral (Nariño)</td>
+                <td>>150°C</td>
+                <td>Alto</td>
+              </tr>
+              <tr>
+                <td>Cerro Negro-Tufiño</td>
+                <td>>150°C</td>
+                <td>Alto</td>
+              </tr>
+              <tr>
+                <td>Nevado del Ruiz</td>
+                <td>>200°C</td>
+                <td>Muy Alto</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="Imagenes/Geotermia/mapa-potencial-colombia.jpg" alt="Mapa de potencial geotérmico en Colombia" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 2. Zonas con potencial geotérmico en Colombia</figcaption>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6 order-md-2">
+        <h4 class="text-primary">Iniciativas Actuales</h4>
+        <ul>
+          <li>Estudios del SGC desde 2008 caracterizando el potencial</li>
+          <li>VII Reunión Nacional de Geotermia (RENAG 2025)</li>
+          <li>Licitaciones de exploración por la ANH (2024-2025)</li>
+          <li>Estimación de cubrir 8% de demanda eléctrica nacional</li>
+        </ul>
+        <div class="alert alert-info mt-3">
+          <strong>Dato técnico:</strong> Modelos de machine learning reducen margen de error en estimaciones de gradiente térmico al 12%.
+        </div>
+      </div>
+      <div class="col-md-6 order-md-1">
+        <img src="Imagenes/Geotermia/exploracion-campo.jpg" alt="Trabajos de exploración geotérmica" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 3. Exploración geotérmica en campo</figcaption>
+      </div>
+    </div>
   </section>
 
-  <section class="mb-5">
-    <h2 class="fw-bold">Ventajas de la energía geotérmica</h2>
-    <ul>
-      <li>Bajo impacto ambiental.</li>
-      <li>Fuente renovable y constante.</li>
-      <li>Alta eficiencia energética.</li>
-      <li>Generación de empleo local y desarrollo tecnológico.</li>
-      <li>Compatible con otras energías renovables.</li>
-    </ul>
+  <!-- Tecnología -->
+  <section id="tecnologia" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2">Tecnologías para Exploración y Explotación</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <h4 class="text-primary">Métodos de Exploración</h4>
+        <div class="accordion" id="accordionTecnologia">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                Magnetotelúrica (MT)
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionTecnologia">
+              <div class="accordion-body">
+                <p>Mide resistividad del subsuelo para identificar reservorios (agua/roca caliente = baja resistividad). Ampliamente usada en proyectos como Azufral y Sotará.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                Geoquímica Isotópica
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionTecnologia">
+              <div class="accordion-body">
+                <p>Análisis de aguas termales y gases para estimar temperaturas en el subsuelo mediante geotermómetros químicos (sílice, Na-K-Ca).</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                Modelamiento 3D
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionTecnologia">
+              <div class="accordion-body">
+                <p>Simulación computacional de flujo de calor y fluidos para predecir comportamiento del reservorio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="Imagenes/Geotermia/tecnologia-exploracion.jpg" alt="Técnicas de exploración geotérmica" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 4. Técnicas modernas de exploración</figcaption>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h4 class="text-primary">Tipos de Plantas Geotérmicas</h4>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img src="Imagenes/Geotermia/planta-vapor-seco.jpg" class="card-img-top" alt="Planta de vapor seco">
+              <div class="card-body">
+                <h5 class="card-title">Vapor Seco</h5>
+                <p class="card-text">Usan vapor directamente para mover turbinas (ej: The Geysers, EE.UU.). Requieren >150°C.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img src="Imagenes/Geotermia/planta-flash.jpg" class="card-img-top" alt="Planta flash">
+              <div class="card-body">
+                <h5 class="card-title">Plantas Flash</h5>
+                <p class="card-text">Separan agua caliente a alta presión en vapor y líquido para generación eléctrica.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img src="Imagenes/Geotermia/planta-binaria.jpg" class="card-img-top" alt="Planta binaria">
+              <div class="card-body">
+                <h5 class="card-title">Ciclo Binario</h5>
+                <p class="card-text">Aprovechan fluidos de 70-150°C mediante intercambio de calor con un fluido secundario.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="mb-5">
-    <h2 class="fw-bold">Proceso de exploración geotérmica</h2>
-    <p>Incluye cartografía geológica, análisis geoquímico, estudios geofísicos (resistividad, sísmica) y perforación de pozos exploratorios para identificar reservorios de calor accesibles.</p>
-    <img src="imagenes/geotermia_exploracion.jpg" alt="Proceso exploración" class="blog-img">
+  <!-- Aplicaciones -->
+  <section id="aplicaciones" class="mb-5 py-4 bg-light rounded">
+    <h2 class="fw-bold border-bottom pb-2">Aplicaciones de la Energía Geotérmica</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <h4 class="text-primary">Generación Eléctrica</h4>
+        <p>En Colombia, los proyectos en desarrollo apuntan principalmente a generación eléctrica en zonas con alta temperatura:</p>
+        <ul>
+          <li><strong>Nevado del Ruiz:</strong> Estudio de prefactibilidad para ~50 MW</li>
+          <li><strong>Chiles-Cerro Negro:</strong> Proyecto binacional con potencial de ~138 MW</li>
+          <li><strong>Paipa:</strong> Posible desarrollo para generación y usos directos combinados</li>
+        </ul>
+        
+        <h4 class="text-primary mt-4">Sistemas en Cascada</h4>
+        <p>Aprovechamiento escalonado del calor para maximizar eficiencia:</p>
+        <ol>
+          <li>Generación eléctrica (alta temperatura)</li>
+          <li>Calefacción urbana (media temperatura)</li>
+          <li>Invernaderos o acuicultura (baja temperatura)</li>
+          <li>Balnearios (temperatura residual)</li>
+        </ol>
+      </div>
+      <div class="col-lg-6">
+        <img src="Imagenes/Geotermia/aplicaciones-cascada.jpg" alt="Sistema en cascada geotérmico" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 5. Aprovechamiento en cascada de energía geotérmica</figcaption>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="Imagenes/Geotermia/balneario-termal.jpg" class="card-img-top" alt="Balneario termal">
+          <div class="card-body">
+            <h5 class="card-title">Balneoterapia</h5>
+            <p class="card-text">Aprovechamiento de aguas termales para turismo wellness y tratamientos médicos (ej: Paipa).</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="Imagenes/Geotermia/invernadero-geotermico.jpg" class="card-img-top" alt="Invernadero geotérmico">
+          <div class="card-body">
+            <h5 class="card-title">Agricultura</h5>
+            <p class="card-text">Calefacción de invernaderos en zonas frías y secado de productos agrícolas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="Imagenes/Geotermia/bomba-calor.jpg" class="card-img-top" alt="Bomba de calor">
+          <div class="card-body">
+            <h5 class="card-title">Climatización</h5>
+            <p class="card-text">Bombas de calor geotérmicas para calefacción/refrigeración de edificios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2 class="fw-bold">Normatividad y contexto en Colombia</h2>
-    <p>Regulada por el Ministerio de Minas y Energía y respaldada por la Ley 1715 de 2014 sobre fuentes no convencionales de energía renovable. La geotermia está siendo evaluada como alternativa viable en regiones volcánicas del país.</p>
+  <!-- Marco Normativo -->
+  <section id="normativa" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2">Marco Normativo en Colombia</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <h4 class="text-primary">Evolución Legislativa</h4>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">1974</div>
+            <div class="timeline-content">
+              <h5>Decreto 2811</h5>
+              <p>Código Nacional de Recursos Naturales (primer marco regulatorio).</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2001</div>
+            <div class="timeline-content">
+              <h5>Ley 697</h5>
+              <p>Promoción de energías renovables, incluyendo geotermia.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2014</div>
+            <div class="timeline-content">
+              <h5>Ley 1715</h5>
+              <p>Define geotermia como fuente no convencional renovable con incentivos fiscales.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2021-2024</div>
+            <div class="timeline-content">
+              <h5>Ley 2099 y Decretos</h5>
+              <p>Registro geotérmico, rondas competitivas y regulación ambiental.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h4 class="text-primary">Incentivos Actuales</h4>
+        <ul class="list-group">
+          <li class="list-group-item">Exclusión de IVA para equipos de generación</li>
+          <li class="list-group-item">Depreciación acelerada de activos</li>
+          <li class="list-group-item">Deducción del 50% del impuesto sobre la renta</li>
+          <li class="list-group-item">Exención de gravámenes arancelarios</li>
+          <li class="list-group-item">Prioridad en despacho en el mercado eléctrico</li>
+        </ul>
+        
+        <div class="alert alert-warning mt-3">
+          <h5>Entidades Involucradas</h5>
+          <ul>
+            <li><strong>MinEnergía:</strong> Políticas sectoriales</li>
+            <li><strong>UPME:</strong> Planeación energética</li>
+            <li><strong>ANH:</strong> Licitaciones y contratos</li>
+            <li><strong>SGC:</strong> Investigación geocientífica</li>
+            <li><strong>ANLA:</strong> Licencias ambientales</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos de Estudio -->
+  <section id="casos" class="mb-5 py-4 bg-light rounded">
+    <h2 class="fw-bold border-bottom pb-2">Casos de Estudio y Proyectos</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4 class="text-primary">Proyecto Paipa (Boyacá)</h4>
+        <p>Zona con sistema hidrotermal activo y manifestaciones superficiales (termas). Estudios del SGC identifican:</p>
+        <ul>
+          <li>Temperaturas de reservorio: 100-150°C</li>
+          <li>Potencial para generación eléctrica y usos directos combinados</li>
+          <li>Proyecto piloto en evaluación para calefacción urbana</li>
+        </ul>
+        <img src="Imagenes/Geotermia/termales-paipa.jpg" alt="Termales de Paipa" class="img-fluid rounded shadow mt-2">
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-primary">Azufral (Nariño)</h4>
+        <p>Volcán activo con potencial para generación eléctrica:</p>
+        <ul>
+          <li>Temperaturas estimadas >150°C</li>
+          <li>Estudios de magnetotelúrica completados</li>
+          <li>En lista para próximas rondas de licitación</li>
+        </ul>
+        <img src="Imagenes/Geotermia/volcan-azufral.jpg" alt="Volcán Azufral" class="img-fluid rounded shadow mt-2">
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h5>Comparación Internacional</h5>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>País</th>
+                    <th>Capacidad Instalada</th>
+                    <th>% Energía Nacional</th>
+                    <th>Lecciones para Colombia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Islandia</td>
+                    <td>755 MW</td>
+                    <td>26%</td>
+                    <td>Integración con calefacción urbana</td>
+                  </tr>
+                  <tr>
+                    <td>Kenia</td>
+                    <td>863 MW</td>
+                    <td>38%</td>
+                    <td>Desarrollo en áreas protegidas con manejo ambiental</td>
+                  </tr>
+                  <tr>
+                    <td>Indonesia</td>
+                    <td>2.3 GW</td>
+                    <td>5%</td>
+                    <td>Modelos PPP para financiamiento</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusiones -->
+  <section class="mb-5">
+    <div class="card border-primary">
+      <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Conclusiones y Perspectivas</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="text-primary">Oportunidades</h5>
+            <ul>
+              <li>Potencial para diversificar matriz energética</li>
+              <li>Generación base estable complementaria a solar/eólica</li>
+              <li>Desarrollo regional en zonas volcánicas</li>
+              <li>Atracción de inversión extranjera en energías limpias</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="text-primary">Desafíos</h5>
+            <ul>
+              <li>Altos costos iniciales de exploración</li>
+              <li>Necesidad de especialización técnica</li>
+              <li>Coordinación interinstitucional</li>
+              <li>Manejo de expectativas comunitarias</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert alert-success mt-3">
+          <p class="mb-0"><strong>Perspectiva:</strong> Colombia tiene el potencial para convertirse en líder regional en geotermia, aprovechando su ubicación en el Cinturón de Fuego, marco normativo avanzado y creciente interés en energías renovables. Los próximos 5 años serán cruciales para materializar proyectos piloto que demuestren viabilidad técnica y económica.</p>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
+
+<!-- Recursos Adicionales -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Recursos Adicionales</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Documentos Técnicos</h5>
+            <ul>
+              <li><a href="#">Mapa de gradiente geotérmico SGC</a></li>
+              <li><a href="#">Guía de exploración geotérmica</a></li>
+              <li><a href="#">Estudios de prefactibilidad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Normatividad</h5>
+            <ul>
+              <li><a href="#">Ley 1715 de 2014</a></li>
+              <li><a href="#">Decreto 1598 de 2024</a></li>
+              <li><a href="#">Resoluciones CREG</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Multimedia</h5>
+            <ul>
+              <li><a href="#">Video: Proceso geotérmico</a></li>
+              <li><a href="#">Galería fotográfica</a></li>
+              <li><a href="#">Webinars técnicos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Footer -->
 <footer class="footer">
