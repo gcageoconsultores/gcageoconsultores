@@ -95,11 +95,11 @@
 </nav>
 
 <!-- Cabecera con imagen destacada -->
-<section class="bienvenida text-center text-white py-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Imagenes/geotermia.jpg'); background-size: cover; background-position: center;">
-  <div class="container">
-    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">ENERGÍA GEOTÉRMICA EN COLOMBIA</h1>
+<section class="hero-section" style="background-image: linear-gradient(rgba(89, 78, 64, 0.7), rgba(89, 78, 64, 0.7)), url('Imagenes/geotecnia-hero.jpg');">
+  <div class="container text-center text-white">
+    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">GEOTECNIA APLICADA</h1>
     <p class="lead" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); max-width: 800px; margin: 0 auto;">
-      Explorando el potencial del calor terrestre: Tecnología, aplicaciones y marco regulatorio para la transición energética
+      Soluciones técnicas para construcción, minería e infraestructura basadas en el estudio científico del suelo
     </p>
   </div>
 </section>
@@ -107,17 +107,17 @@
 <!-- Barra de navegación interna -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
   <div class="container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGeotermia">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGeotecnia">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarGeotermia">
+    <div class="collapse navbar-collapse" id="navbarGeotecnia">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" href="#introduccion">Introducción</a></li>
-        <li class="nav-item"><a class="nav-link" href="#potencial">Potencial</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tecnologia">Tecnología</a></li>
+        <li class="nav-item"><a class="nav-link" href="#definicion">¿Qué es Geotecnia?</a></li>
         <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
-        <li class="nav-item"><a class="nav-link" href="#normativa">Normativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicios">Nuestros Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#metodologia">Metodología</a></li>
         <li class="nav-item"><a class="nav-link" href="#casos">Casos de Estudio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
       </ul>
     </div>
   </div>
@@ -125,456 +125,350 @@
 
 <!-- Contenido principal -->
 <main class="container py-5">
-  <!-- Introducción -->
-  <section id="introduccion" class="mb-5">
+  <!-- Definición -->
+  <section id="definicion" class="mb-5">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">¿Qué es la energía geotérmica?</h2>
-        <p>La energía geotérmica es una fuente renovable que aprovecha el calor interno de la Tierra, generado por:</p>
+        <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">¿Qué es la Geotecnia?</h2>
+        <p>La geotecnia es la disciplina que aplica los principios de la mecánica de suelos y rocas a la ingeniería para:</p>
         <ul>
-          <li>Desintegración radiactiva de isótopos (uranio-238, torio-232, potasio-40)</li>
-          <li>Calor residual de la formación planetaria</li>
-          <li>Procesos de convección del manto terrestre</li>
-        </ul>
-        <p>Este calor se manifiesta como fluidos hidrotermales (agua/vapor) y rocas calientes, con temperaturas que varían desde 30°C hasta más de 300°C según la profundidad y actividad tectónica.</p>
-      </div>
-      <div class="col-lg-6">
-        <img src="Imagenes/Geotermia/geofisica-1.jpg" alt="Esquema del sistema geotérmico terrestre" class="img-fluid rounded shadow">
-        <figcaption class="text-center mt-2 text-muted">Figura 1. Fuentes de calor en el interior terrestre</figcaption>
-      </div>
-    </div>
-  </section>
-
-  <!-- Potencial en Colombia -->
-  <section id="potencial" class="mb-5 py-4 rounded" style="background-color: #f4f4f4;">
-    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Potencial Geotérmico en Colombia</h2>
-    
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <h4 style="color: #C0B59B;">Zonas de Alto Potencial</h4>
-        <p>Colombia, ubicada en el Cinturón de Fuego del Pacífico, cuenta con áreas volcánicas promisorias identificadas por el Servicio Geológico Colombiano (SGC):</p>
-        
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead style="background-color: #C0B59B; color: white;">
-              <tr>
-                <th>Región</th>
-                <th>Temperatura</th>
-                <th>Potencial Estimado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Paipa-Tibasosa (Boyacá)</td>
-                <td>100-150°C</td>
-                <td>Media</td>
-              </tr>
-              <tr>
-                <td>Azufral (Nariño)</td>
-                <td>>150°C</td>
-                <td>Alto</td>
-              </tr>
-              <tr>
-                <td>Cerro Negro-Tufiño</td>
-                <td>>150°C</td>
-                <td>Alto</td>
-              </tr>
-              <tr>
-                <td>Nevado del Ruiz</td>
-                <td>>200°C</td>
-                <td>Muy Alto</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <img src="Imagenes/Geotermia/potencial-geotermico.png" alt="Mapa de potencial geotérmico en Colombia" class="img-fluid rounded shadow">
-        <figcaption class="text-center mt-2 text-muted">Figura 2. Zonas con potencial geotérmico en Colombia</figcaption>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-md-6 order-md-2">
-        <h4 style="color: #C0B59B;">Iniciativas Actuales</h4>
-        <ul>
-          <li>Estudios del SGC desde 2008 caracterizando el potencial</li>
-          <li>VII Reunión Nacional de Geotermia (RENAG 2025)</li>
-          <li>Licitaciones de exploración por la ANH (2024-2025)</li>
-          <li>Estimación de cubrir 8% de demanda eléctrica nacional</li>
+          <li>Evaluar las propiedades físico-mecánicas del terreno</li>
+          <li>Predecir el comportamiento del suelo bajo cargas estructurales</li>
+          <li>Diseñar cimentaciones y estructuras de contención</li>
+          <li>Mitigar riesgos geológicos</li>
         </ul>
         <div class="alert alert-secondary mt-3" style="background-color: #C0B59B; color: white;">
-          <strong>Dato técnico:</strong> Modelos de machine learning reducen margen de error en estimaciones de gradiente térmico al 12%.
-        </div>
-      </div>
-      <div class="col-md-6 order-md-1">
-        <img src="Imagenes/Geotermia/exploracion-campo.jpg" alt="Trabajos de exploración geotérmica" class="img-fluid rounded shadow">
-        <figcaption class="text-center mt-2 text-muted">Figura 3. Exploración geotérmica en campo</figcaption>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tecnología -->
-  <section id="tecnologia" class="mb-5">
-    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Tecnologías para Exploración y Explotación</h2>
-    
-    <div class="row mt-4">
-      <div class="col-lg-6">
-        <h4 style="color: #C0B59B;">Métodos de Exploración</h4>
-        <div class="accordion" id="accordionTecnologia">
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" style="background-color: #f4f4f4; color: #594E40;">
-                Magnetotelúrica (MT)
-              </button>
-            </h3>
-            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionTecnologia">
-              <div class="accordion-body">
-                <p>Mide resistividad del subsuelo para identificar reservorios (agua/roca caliente = baja resistividad). Ampliamente usada en proyectos como Azufral y Sotará.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" style="background-color: #f4f4f4; color: #594E40;">
-                Geoquímica Isotópica
-              </button>
-            </h3>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionTecnologia">
-              <div class="accordion-body">
-                <p>Análisis de aguas termales y gases para estimar temperaturas en el subsuelo mediante geotermómetros químicos (sílice, Na-K-Ca).</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" style="background-color: #f4f4f4; color: #594E40;">
-                Modelamiento 3D
-              </button>
-            </h3>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionTecnologia">
-              <div class="accordion-body">
-                <p>Simulación computacional de flujo de calor y fluidos para predecir comportamiento del reservorio.</p>
-              </div>
-            </div>
-          </div>
+          <strong>Dato técnico:</strong> Un estudio geotécnico puede reducir hasta un 30% los costos en proyectos de construcción.
         </div>
       </div>
       <div class="col-lg-6">
-        <img src="Imagenes/Geotermia/geotermia_exploracion.jpg" alt="Técnicas de exploración geotérmica" class="img-fluid rounded shadow">
-        <figcaption class="text-center mt-2 text-muted">Figura 4. Técnicas modernas de exploración</figcaption>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-md-12">
-        <h4 style="color: #C0B59B;">Tipos de Plantas Geotérmicas</h4>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="Imagenes/Geotermia/vapor-seco.png" class="card-img-top" alt="Planta de vapor seco">
-              <div class="card-body">
-                <h5 class="card-title" style="color: #594E40;">Vapor Seco</h5>
-                <p class="card-text">Usan vapor directamente para mover turbinas (ej: The Geysers, EE.UU.). Requieren >150°C.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="Imagenes/Geotermia/flash-planta.png" class="card-img-top" alt="Planta flash">
-              <div class="card-body">
-                <h5 class="card-title" style="color: #594E40;">Plantas Flash</h5>
-                <p class="card-text">Separan agua caliente a alta presión en vapor y líquido para generación eléctrica.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="Imagenes/Geotermia/binaria-planta.png" class="card-img-top" alt="Planta binaria">
-              <div class="card-body">
-                <h5 class="card-title" style="color: #594E40;">Ciclo Binario</h5>
-                <p class="card-text">Aprovechan fluidos de 70-150°C mediante intercambio de calor con un fluido secundario.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="Imagenes/geotecnia-definicion.jpg" alt="Estudio geotécnico en campo" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 1. Trabajos de campo en geotecnia</figcaption>
       </div>
     </div>
   </section>
 
   <!-- Aplicaciones -->
   <section id="aplicaciones" class="mb-5 py-4 rounded" style="background-color: #f4f4f4;">
-    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Aplicaciones de la Energía Geotérmica</h2>
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Aplicaciones de la Geotecnia</h2>
     
     <div class="row mt-4">
-      <div class="col-lg-6">
-        <h4 style="color: #C0B59B;">Generación Eléctrica</h4>
-        <p>En Colombia, los proyectos en desarrollo apuntan principalmente a generación eléctrica en zonas con alta temperatura:</p>
-        <ul>
-          <li><strong>Nevado del Ruiz:</strong> Estudio de prefactibilidad para ~50 MW</li>
-          <li><strong>Chiles-Cerro Negro:</strong> Proyecto binacional con potencial de ~138 MW</li>
-          <li><strong>Paipa:</strong> Posible desarrollo para generación y usos directos combinados</li>
-        </ul>
-        
-        <h4 style="color: #C0B59B;" class="mt-4">Sistemas en Cascada</h4>
-        <p>Aprovechamiento escalonado del calor para maximizar eficiencia:</p>
-        <ol>
-          <li>Generación eléctrica (alta temperatura)</li>
-          <li>Calefacción urbana (media temperatura)</li>
-          <li>Invernaderos o acuicultura (baja temperatura)</li>
-          <li>Balnearios (temperatura residual)</li>
-        </ol>
-      </div>
-      <div class="col-lg-6">
-        <img src="Imagenes/Geotermia/usos_cascada.png" alt="Sistema en cascada geotérmico" class="img-fluid rounded shadow">
-        <figcaption class="text-center mt-2 text-muted">Figura 5. Aprovechamiento en cascada de energía geotérmica</figcaption>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-md-4">
+      <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="Imagenes/Geotermia/balnoterapia2.jpg" class="card-img-top" alt="Balneario termal">
+          <img src="Imagenes/aplicacion-construccion.jpg" class="card-img-top" alt="Construcción">
           <div class="card-body">
-            <h5 class="card-title" style="color: #594E40;">Balneoterapia</h5>
-            <p class="card-text">Aprovechamiento de aguas termales para turismo wellness y tratamientos médicos (ej: Paipa).</p>
+            <h5 class="card-title" style="color: #594E40;">Ingeniería Civil</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Diseño de cimentaciones</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Estabilidad de taludes</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Túneles y obras subterráneas</li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="Imagenes/Geotermia/agricultura-termal.jpg" class="card-img-top" alt="Invernadero geotérmico">
+          <img src="Imagenes/aplicacion-mineria.jpg" class="card-img-top" alt="Minería">
           <div class="card-body">
-            <h5 class="card-title" style="color: #594E40;">Agricultura</h5>
-            <p class="card-text">Calefacción de invernaderos en zonas frías y secado de productos agrícolas.</p>
+            <h5 class="card-title" style="color: #594E40;">Sector Minero</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Diseño de presas de relaves</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Estabilidad de bancos</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Análisis de pilas de lixiviación</li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <img src="Imagenes/Geotermia/bomba-calor.png" class="card-img-top" alt="Bomba de calor">
+          <img src="Imagenes/aplicacion-ambiental.jpg" class="card-img-top" alt="Ambiental">
           <div class="card-body">
-            <h5 class="card-title" style="color: #594E40;">Climatización</h5>
-            <p class="card-text">Bombas de calor geotérmicas para calefacción/refrigeración de edificios.</p>
+            <h5 class="card-title" style="color: #594E40;">Gestión Ambiental</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Remediación de suelos</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Estabilidad de rellenos sanitarios</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Control de erosión</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Marco Normativo -->
-  <section id="normativa" class="mb-5">
-    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Marco Normativo en Colombia</h2>
+  <!-- Servicios -->
+  <section id="servicios" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Nuestros Servicios Técnicos</h2>
     
     <div class="row mt-4">
       <div class="col-lg-6">
-        <h4 style="color: #C0B59B;">Evolución Legislativa</h4>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">1974</div>
-            <div class="timeline-content">
-              <h5 style="color: #594E40;">Decreto 2811</h5>
-              <p>Código Nacional de Recursos Naturales (primer marco regulatorio).</p>
+        <div class="accordion" id="accordionServicios">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" style="background-color: #f4f4f4; color: #594E40;">
+                <i class="bi bi-gear-fill me-2"></i> Investigación Geotécnica
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionServicios">
+              <div class="accordion-body">
+                <ul>
+                  <li>Perforaciones y muestreo de suelos</li>
+                  <li>Ensayo de penetración estándar (SPT)</li>
+                  <li>Análisis de laboratorio (granulometría, límites Atterberg, consolidación)</li>
+                  <li>Pruebas de carga in situ</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2001</div>
-            <div class="timeline-content">
-              <h5 style="color: #594E40;">Ley 697</h5>
-              <p>Promoción de energías renovables, incluyendo geotermia.</p>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" style="background-color: #f4f4f4; color: #594E40;">
+                <i class="bi bi-building me-2"></i> Diseño de Cimentaciones
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionServicios">
+              <div class="accordion-body">
+                <ul>
+                  <li>Análisis de capacidad portante</li>
+                  <li>Diseño de pilotes y losas</li>
+                  <li>Micropilotes y anclajes</li>
+                  <li>Mejoramiento de suelos</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2014</div>
-            <div class="timeline-content">
-              <h5 style="color: #594E40;">Ley 1715</h5>
-              <p>Define geotermia como fuente no convencional renovable con incentivos fiscales.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2021-2024</div>
-            <div class="timeline-content">
-              <h5 style="color: #594E40;">Ley 2099 y Decretos</h5>
-              <p>Registro geotérmico, rondas competitivas y regulación ambiental.</p>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" style="background-color: #f4f4f4; color: #594E40;">
+                <i class="bi bi-shield-slash-fill me-2"></i> Estabilidad de Taludes
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionServicios">
+              <div class="accordion-body">
+                <ul>
+                  <li>Análisis de estabilidad (métodos de equilibrio límite)</li>
+                  <li>Modelamiento numérico (FLAC, Plaxis)</li>
+                  <li>Sistemas de monitoreo (inclinómetros, piezómetros)</li>
+                  <li>Diseño de muros de contención</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-lg-6">
-        <h4 style="color: #C0B59B;">Incentivos Actuales</h4>
-        <ul class="list-group">
-          <li class="list-group-item">Exclusión de IVA para equipos de generación</li>
-          <li class="list-group-item">Depreciación acelerada de activos</li>
-          <li class="list-group-item">Deducción del 50% del impuesto sobre la renta</li>
-          <li class="list-group-item">Exención de gravámenes arancelarios</li>
-          <li class="list-group-item">Prioridad en despacho en el mercado eléctrico</li>
-        </ul>
-        
-        <div class="alert mt-3" style="background-color: #C0B59B; color: white;">
-          <h5 style="color: white;">Entidades Involucradas</h5>
-          <ul>
-            <li><strong>MinEnergía:</strong> Políticas sectoriales</li>
-            <li><strong>UPME:</strong> Planeación energética</li>
-            <li><strong>ANH:</strong> Licitaciones y contratos</li>
-            <li><strong>SGC:</strong> Investigación geocientífica</li>
-            <li><strong>ANLA:</strong> Licencias ambientales</li>
-          </ul>
+        <img src="Imagenes/servicios-geotecnia.jpg" alt="Equipo técnico realizando ensayos" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 2. Nuestro equipo de especialistas en campo</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metodología -->
+  <section id="metodologia" class="mb-5 py-4 rounded" style="background-color: #f4f4f4;">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Metodología de Trabajo</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">1</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Investigación Preliminar</h5>
+              <p>Revisión de antecedentes, geología regional y reconocimiento de campo</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Exploración Geotécnica</h5>
+              <p>Perforaciones, ensayos in situ y muestreo representativo</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">3</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Análisis de Laboratorio</h5>
+              <p>Caracterización física y mecánica de muestras</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">4</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Modelamiento y Diseño</h5>
+              <p>Análisis numérico y recomendaciones técnicas</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">5</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Informe Final</h5>
+              <p>Documentación técnica con planos y especificaciones</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Casos de Estudio -->
-  <section id="casos" class="mb-5 py-4 rounded" style="background-color: #f4f4f4;">
-    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Casos de Estudio y Proyectos</h2>
+  <section id="casos" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Casos de Estudio</h2>
     
     <div class="row mt-4">
-      <div class="col-md-6">
-        <h4 style="color: #C0B59B;">Proyecto Paipa (Boyacá)</h4>
-        <p>Zona con sistema hidrotermal activo y manifestaciones superficiales (termas). Estudios del SGC identifican:</p>
-        <ul>
-          <li>Temperaturas de reservorio: 100-150°C</li>
-          <li>Potencial para generación eléctrica y usos directos combinados</li>
-          <li>Proyecto piloto en evaluación para calefacción urbana</li>
-        </ul>
-        <img src="Imagenes/Geotermia/paipa-termal.jpg" alt="Termales de Paipa" class="img-fluid rounded shadow mt-2">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="Imagenes/caso-cimentacion.jpg" class="card-img-top" alt="Cimentación especial">
+          <div class="card-body">
+            <h5 style="color: #594E40;">Cimentación Profunda en Suelos Blandos</h5>
+            <p><strong>Sector:</strong> Edificaciones</p>
+            <p><strong>Reto:</strong> Construcción de torre de 25 pisos en zona lacustre</p>
+            <p><strong>Solución:</strong> Sistema de pilotes de fricción con 32m de profundidad</p>
+            <a href="#" class="btn btn-sm" style="background-color: #C0B59B; color: white;">Ver estudio completo</a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-        <h4 style="color: #C0B59B;">Azufral (Nariño)</h4>
-        <p>Volcán activo con potencial para generación eléctrica:</p>
-        <ul>
-          <li>Temperaturas estimadas >150°C</li>
-          <li>Estudios de magnetotelúrica completados</li>
-          <li>En lista para próximas rondas de licitación</li>
-        </ul>
-        <img src="Imagenes/Geotermia/azufral-termal.jpg" alt="Volcán Azufral" class="img-fluid rounded shadow mt-2">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="Imagenes/caso-mineria.jpg" class="card-img-top" alt="Estabilidad minera">
+          <div class="card-body">
+            <h5 style="color: #594E40;">Estabilización de Talud Minero</h5>
+            <p><strong>Sector:</strong> Minería</p>
+            <p><strong>Reto:</strong> Deslizamiento activo en zona de explotación</p>
+            <p><strong>Solución:</strong> Sistema de drenaje + anclajes pasivos</p>
+            <a href="#" class="btn btn-sm" style="background-color: #C0B59B; color: white;">Ver estudio completo</a>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="mb-5 py-4 rounded" style="background-color: #f4f4f4;">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Solicite Nuestros Servicios</h2>
     
     <div class="row mt-4">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-header" style="background-color: #594E40; color: white;">
-            <h5>Comparación Internacional</h5>
+      <div class="col-lg-6">
+        <form>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombre" required>
           </div>
+          <div class="mb-3">
+            <label for="empresa" class="form-label">Empresa</label>
+            <input type="text" class="form-control" id="empresa">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="servicio" class="form-label">Servicio de interés</label>
+            <select class="form-select" id="servicio">
+              <option selected>Seleccione un servicio</option>
+              <option>Estudios geotécnicos</option>
+              <option>Diseño de cimentaciones</option>
+              <option>Estabilidad de taludes</option>
+              <option>Asesoría especializada</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Describa su proyecto</label>
+            <textarea class="form-control" id="mensaje" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn" style="background-color: #594E40; color: white;">Enviar solicitud</button>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <div class="card h-100">
           <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-striped">
-                <thead style="background-color: #C0B59B; color: white;">
-                  <tr>
-                    <th>País</th>
-                    <th>Capacidad Instalada</th>
-                    <th>% Energía Nacional</th>
-                    <th>Lecciones para Colombia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Islandia</td>
-                    <td>755 MW</td>
-                    <td>26%</td>
-                    <td>Integración con calefacción urbana</td>
-                  </tr>
-                  <tr>
-                    <td>Kenia</td>
-                    <td>863 MW</td>
-                    <td>38%</td>
-                    <td>Desarrollo en áreas protegidas con manejo ambiental</td>
-                  </tr>
-                  <tr>
-                    <td>Indonesia</td>
-                    <td>2.3 GW</td>
-                    <td>5%</td>
-                    <td>Modelos PPP para financiamiento</td>
-                  </tr>
-                </tbody>
-              </table>
+            <h5 style="color: #594E40;" class="card-title">Información de contacto</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-geo-alt-fill me-2" style="color: #C0B59B;"></i> Cra 45 #26-85, Bogotá, Colombia</li>
+              <li><i class="bi bi-telephone-fill me-2" style="color: #C0B59B;"></i> +57 1 123 4567</li>
+              <li><i class="bi bi-envelope-fill me-2" style="color: #C0B59B;"></i> info@geoconsultores.com</li>
+              <li><i class="bi bi-clock-fill me-2" style="color: #C0B59B;"></i> Lunes a Viernes: 8:00 am - 5:00 pm</li>
+            </ul>
+            <hr>
+            <h6 style="color: #594E40;">Áreas de cobertura</h6>
+            <ul class="list-inline">
+              <li class="list-inline-item"><span class="badge rounded-pill" style="background-color: #C0B59B;">Bogotá</span></li>
+              <li class="list-inline-item"><span class="badge rounded-pill" style="background-color: #C0B59B;">Medellín</span></li>
+              <li class="list-inline-item"><span class="badge rounded-pill" style="background-color: #C0B59B;">Cali</span></li>
+              <li class="list-inline-item"><span class="badge rounded-pill" style="background-color: #C0B59B;">Eje Cafetero</span></li>
+              <li class="list-inline-item"><span class="badge rounded-pill" style="background-color: #C0B59B;">Santander</span></li>
+            </ul>
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-secondary me-2"><i class="bi bi-file-earmark-pdf"></i> Brochure PDF</a>
+              <a href="#" class="btn btn-outline-secondary"><i class="bi bi-download"></i> Formatos</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- Conclusiones -->
-  <section class="mb-5">
-    <div class="card" style="border-color: #594E40;">
-      <div class="card-header" style="background-color: #594E40; color: white;">
-        <h3 class="mb-0">Conclusiones y Perspectivas</h3>
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-6">
-            <h5 style="color: #C0B59B;">Oportunidades</h5>
-            <ul>
-              <li>Potencial para diversificar matriz energética</li>
-              <li>Generación base estable complementaria a solar/eólica</li>
-              <li>Desarrollo regional en zonas volcánicas</li>
-              <li>Atracción de inversión extranjera en energías limpias</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <h5 style="color: #C0B59B;">Desafíos</h5>
-            <ul>
-              <li>Altos costos iniciales de exploración</li>
-              <li>Necesidad de especialización técnica</li>
-              <li>Coordinación interinstitucional</li>
-              <li>Manejo de expectativas comunitarias</li>
-            </ul>
-          </div>
+<!-- Footer -->
+<footer class="py-5" style="background-color: #594E40; color: white;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>Geoconsultores Asociados</h5>
+        <p>Especialistas en geotecnia aplicada con más de 15 años de experiencia en proyectos de ingeniería civil, minería y gestión ambiental.</p>
+        <div class="social-icons">
+          <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-youtube"></i></a>
         </div>
-        <div class="alert mt-3" style="background-color: #C0B59B; color: white;">
-          <p class="mb-0"><strong>Perspectiva:</strong> Colombia tiene el potencial para convertirse en líder regional en geotermia, aprovechando su ubicación en el Cinturón de Fuego, marco normativo avanzado y creciente interés en energías renovables. Los próximos 5 años serán cruciales para materializar proyectos piloto que demuestren viabilidad técnica y económica.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Servicios</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Estudios geotécnicos</a></li>
+          <li><a href="#" class="text-white">Diseño de cimentaciones</a></li>
+          <li><a href="#" class="text-white">Estabilidad de taludes</a></li>
+          <li><a href="#" class="text-white">Instrumentación geotécnica</a></li>
+          <li><a href="#" class="text-white">Consultoría especializada</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Certificaciones</h5>
+        <div class="row">
+          <div class="col-6">
+            <img src="Imagenes/certificacion-1.png" alt="Certificación 1" class="img-fluid mb-2">
+          </div>
+          <div class="col-6">
+            <img src="Imagenes/certificacion-2.png" alt="Certificación 2" class="img-fluid mb-2">
+          </div>
+          <div class="col-6">
+            <img src="Imagenes/certificacion-3.png" alt="Certificación 3" class="img-fluid mb-2">
+          </div>
+          <div class="col-6">
+            <img src="Imagenes/certificacion-4.png" alt="Certificación 4" class="img-fluid mb-2">
+          </div>
         </div>
       </div>
     </div>
-  </section>
-</main>
-
-<!-- Recursos Adicionales -->
-<section class="py-5" style="background-color: #594E40; color: white;">
-  <div class="container">
-    <h2 class="fw-bold text-center mb-4">Recursos Adicionales</h2>
+    <hr class="my-4" style="border-color: #C0B59B;">
     <div class="row">
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title" style="color: #594E40;">Documentos Técnicos</h5>
-            <ul>
-              <li><a href="#" style="color: #C0B59B;">Mapa de gradiente geotérmico SGC</a></li>
-              <li><a href="#" style="color: #C0B59B;">Guía de exploración geotérmica</a></li>
-              <li><a href="#" style="color: #C0B59B;">Estudios de prefactibilidad</a></li>
-            </ul>
-          </div>
-        </div>
+      <div class="col-md-6">
+        <p class="mb-0">© 2023 Geoconsultores Asociados. Todos los derechos reservados.</p>
       </div>
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title" style="color: #594E40;">Normatividad</h5>
-            <ul>
-              <li><a href="#" style="color: #C0B59B;">Ley 1715 de 2014</a></li>
-              <li><a href="#" style="color: #C0B59B;">Decreto 1598 de 2024</a></li>
-              <li><a href="#" style="color: #C0B59B;">Resoluciones CREG</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title" style="color: #594E40;">Multimedia</h5>
-            <ul>
-              <li><a href="#" style="color: #C0B59B;">Video: Proceso geotérmico</a></li>
-              <li><a href="#" style="color: #C0B59B;">Galería fotográfica</a></li>
-              <li><a href="#" style="color: #C0B59B;">Webinars técnicos</a></li>
-            </ul>
-          </div>
-        </div>
+      <div class="col-md-6 text-md-end">
+        <a href="#" class="text-white me-3">Política de privacidad</a>
+        <a href="#" class="text-white me-3">Términos de servicio</a>
+        <a href="#" class="text-white">Mapa del sitio</a>
       </div>
     </div>
   </div>
-</section>
+</footer>
+
+<!-- Botón WhatsApp -->
+<div class="whatsapp-button">
+  <a href="https://wa.me/573001234567" target="_blank" class="text-white"><i class="bi bi-whatsapp"></i></a>
+</div>
+
   
 
 <!-- Footer -->
