@@ -1,122 +1,692 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Geotermia en Colombia - GCA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geo-Ecosistema Ambiental | GCA - Geoconsultores Asociados</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
+      background-color: #FFFFFF;
       color: #594E40;
+      padding-top: 112px; /* Ajuste para la barra de navegación fija */
     }
-    h2, h3 {
-      color: #3c5f3c;
-    }
-    .top-space {
-      margin-top: 50px;
-    }
-    .custom-table th, .custom-table td {
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-    .custom-table {
+    .top-bar {
+      background-color: #C0B59B;
+      padding: 5px 0;
+      font-size: 14px;
+      position: fixed;
+      top: 0;
       width: 100%;
-      margin-top: 20px;
-      border-collapse: collapse;
+      z-index: 1030;
     }
-    .img-fluid {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 15px 0;
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    .navbar-brand img {
+      height: 80px;
+    }
+    .sticky-nav {
+      position: fixed;
+      top: 24px; /* Altura del top-bar */
+      width: 100%;
+      z-index: 1020;
+    }
+    .secondary-nav {
+      position: sticky;
+      top: 112px; /* Altura del top-bar + navbar principal */
+      z-index: 1010;
+      background-color: white;
+    }
+    .footer {
+      background-color: #594E40;
+      color: #fff;
+      padding: 40px 0;
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -112px; /* Compensa el padding-top del body */
+    }
+    .eco-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid #C0B59B;
+    }
+    .eco-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .eco-icon {
+      font-size: 2.5rem;
+      color: #594E40;
+      margin-bottom: 1rem;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background-color: #128C7E;
+    }
+    .border-eco {
+      border-bottom: 3px solid #C0B59B;
+    }
+    .bg-eco-light {
+      background-color: #f8f9fa;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #C0B59B;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .timeline-date {
+      position: absolute;
+      left: -50px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      background: #594E40;
+      color: white;
+      font-weight: bold;
+    }
+    .timeline-content {
+      padding: 15px;
+      background: white;
+      border-radius: 5px;
+      border-left: 3px solid #C0B59B;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
-<body class="container py-4">
 
-  <h1 class="text-center mb-4">Geotermia en Colombia</h1>
+<body>
 
-  <p>La energía geotérmica es una fuente de energía renovable que se obtiene aprovechando el calor interno de la Tierra. Este recurso puede ser aprovechado tanto para la generación de electricidad como para usos térmicos directos.</p>
+<!-- Top Bar -->
+<div class="top-bar text-center">
+  <span>
+    <i class="bi bi-telephone"></i> +57 300 123 4567 |
+    <i class="bi bi-geo-alt"></i> Bogotá, Colombia |
+    <i class="bi bi-envelope"></i> info@geoconsultores.com |
+    <i class="bi bi-facebook"></i> /GCA |
+    <i class="bi bi-instagram"></i> @GCA
+  </span>
+</div>
 
-  <h2 class="top-space">Potencial geotérmico en Colombia</h2>
-  <p>Colombia, por su ubicación geológica en el Cinturón de Fuego del Pacífico y su actividad volcánica, posee un alto potencial geotérmico. Algunas zonas de interés geotérmico en Colombia incluyen:</p>
-  <ul>
-    <li>Macizo colombiano (Cauca, Huila, Nariño)</li>
-    <li>Volcanes Galeras, Azufral, Cerro Negro-Tufiño</li>
-    <li>Regiones de Caldas y Risaralda</li>
-  </ul>
+<!-- Navigation Principal -->
+<nav class="navbar navbar-expand-lg sticky-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo GCA"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown">Servicios</a>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="geofisica.html">Geofísica</a></li>
+              <li><a class="dropdown-item" href="geotecnia.html">Geotecnia</a></li>
+              <li><a class="dropdown-item" href="geotermia.html">Geotermia</a></li>
+              <li><a class="dropdown-item" href="licencias.html">Licencias de Construcción</a></li>                     
+              <li><a class="dropdown-item" href="medio-ambiente.html">Medio Ambiente</a></li>
+              <li><a class="dropdown-item" href="agua.html">Recursos Hídricos</a></li>             
+              <li><a class="dropdown-item" href="sig.html">SIG</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <h2 class="top-space">Tecnologías utilizadas</h2>
-  <ul>
-    <li><strong>Sistemas hidrotermales:</strong> Aprovechan vapor o agua caliente de acuíferos profundos.</li>
-    <li><strong>Sistemas binarios:</strong> Usan intercambiadores de calor para activar un fluido secundario.</li>
-    <li><strong>Sistemas de ciclo cerrado:</strong> Intercambio geotérmico para calefacción o refrigeración.</li>
-  </ul>
+<!-- Cabecera con imagen destacada -->
+<section class="hero-section" style="background-image: linear-gradient(rgba(89, 78, 64, 0.7), rgba(89, 78, 64, 0.7)), url('Imagenes/geo-ecosistema.jpg');">
+  <div class="container text-center text-white">
+    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">GEO-ECOSISTEMA AMBIENTAL</h1>
+    <p class="lead" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); max-width: 800px; margin: 0 auto;">
+      Enfoque integral para la gestión ambiental desde la perspectiva de las geociencias
+    </p>
+  </div>
+</section>
 
-  <h2 class="top-space">Marco normativo en Colombia</h2>
-  <ul>
-    <li>Ley 1715 de 2014: Regula el uso de energías renovables no convencionales.</li>
-    <li>UPME y MinMinas: Entidades responsables de estudios y regulación.</li>
-  </ul>
+<!-- Barra de navegación interna -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white secondary-nav">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGeoEco">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarGeoEco">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#definicion">¿Qué es?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#componentes">Componentes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#metodos">Métodos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#normativa">Normativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#casos">Casos de Estudio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <h2 class="top-space">Ventajas</h2>
-  <ul>
-    <li>Fuente de energía renovable y constante (24/7).</li>
-    <li>Bajas emisiones de gases de efecto invernadero.</li>
-    <li>Bajo impacto ambiental y visual comparado con otras fuentes.</li>
-    <li>Puede complementar otros tipos de generación eléctrica.</li>
-  </ul>
+<!-- Contenido principal -->
+<main class="container py-5">
+  <!-- Definición -->
+  <section id="definicion" class="mb-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="fw-bold border-bottom pb-2 border-eco" style="color: #594E40;">¿Qué es el Geo-Ecosistema Ambiental?</h2>
+        <p>El enfoque de Geo-Ecosistema Ambiental integra las disciplinas geológicas, geomorfológicas, hidrogeológicas y geofísicas para comprender y gestionar las interacciones entre el medio físico y los sistemas biológicos.</p>
+        <p>Este enfoque multidisciplinario permite:</p>
+        <ul>
+          <li>Evaluar impactos ambientales desde una perspectiva integral</li>
+          <li>Identificar riesgos naturales y antrópicos</li>
+          <li>Desarrollar estrategias de remediación efectivas</li>
+          <li>Planificar el uso sostenible del territorio</li>
+        </ul>
+        <div class="alert alert-secondary mt-3" style="background-color: #C0B59B; color: white;">
+          <strong>Enfoque clave:</strong> Comprender la Tierra como un sistema dinámico donde los componentes geológicos interactúan con los ecosistemas.
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="Imagenes/geo-ecosistema-diagrama.jpg" alt="Diagrama de Geo-Ecosistema" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 1. Componentes del Geo-Ecosistema Ambiental</figcaption>
+      </div>
+    </div>
+  </section>
 
-  <h2 class="top-space">Desventajas</h2>
-  <ul>
-    <li>Altos costos iniciales de exploración.</li>
-    <li>Requiere estudios geológicos y geofísicos avanzados.</li>
-    <li>Limitada a regiones con actividad geotérmica adecuada.</li>
-  </ul>
+  <!-- Componentes -->
+  <section id="componentes" class="mb-5 py-4 bg-eco-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-eco" style="color: #594E40;">Componentes del Geo-Ecosistema</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 eco-card">
+          <div class="card-body text-center">
+            <i class="bi bi-geo-alt-fill eco-icon"></i>
+            <h4 style="color: #594E40;">Geológico</h4>
+            <p>Estudio de rocas, suelos y procesos geológicos que condicionan los ecosistemas:</p>
+            <ul class="text-start small">
+              <li>Litología y estructura geológica</li>
+              <li>Procesos geodinámicos</li>
+              <li>Caracterización de materiales</li>
+              <li>Riesgos geológicos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 eco-card">
+          <div class="card-body text-center">
+            <i class="bi bi-mountain eco-icon"></i>
+            <h4 style="color: #594E40;">Geomorfológico</h4>
+            <p>Análisis de formas del terreno y procesos superficiales:</p>
+            <ul class="text-start small">
+              <li>Unidades geomorfológicas</li>
+              <li>Procesos erosivos</li>
+              <li>Dinámica de laderas</li>
+              <li>Cambios en el relieve</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 eco-card">
+          <div class="card-body text-center">
+            <i class="bi bi-droplet-fill eco-icon"></i>
+            <h4 style="color: #594E40;">Hidrogeológico</h4>
+            <p>Estudio de las aguas subterráneas y su interacción con el medio:</p>
+            <ul class="text-start small">
+              <li>Acuíferos y flujos</li>
+              <li>Calidad de aguas</li>
+              <li>Recarga natural</li>
+              <li>Vulnerabilidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 eco-card">
+          <div class="card-body text-center">
+            <i class="bi bi-magnet-fill eco-icon"></i>
+            <h4 style="color: #594E40;">Geofísico</h4>
+            <p>Evaluación de propiedades físicas del subsuelo:</p>
+            <ul class="text-start small">
+              <li>Caracterización no invasiva</li>
+              <li>Detección de contaminantes</li>
+              <li>Estructuras subterráneas</li>
+              <li>Monitoreo ambiental</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2 class="top-space">Mapa referencial (espacio para imagen)</h2>
-  <img src="Imagenes/Geotermia/mapa-potencial.jpg" alt="Mapa potencial geotérmico Colombia" class="img-fluid">
+  <!-- Métodos -->
+  <section id="metodos" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-eco" style="color: #594E40;">Métodos de Estudio</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Técnicas de Campo</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Cartografía geoambiental:</strong> Integración de datos geológicos, geomorfológicos y ecológicos</li>
+              <li><strong>Perforaciones e investigaciones in situ:</strong> Muestreo de suelos y aguas</li>
+              <li><strong>Geofísica ambiental:</strong> Tomografía eléctrica, georadar, sísmica</li>
+              <li><strong>Monitoreo continuo:</strong> Parámetros físico-químicos y biológicos</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Análisis de Laboratorio</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Caracterización físico-química de muestras</li>
+              <li>Análisis mineralógicos y geoquímicos</li>
+              <li>Estudios isotópicos</li>
+              <li>Bioensayos de toxicidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Modelamiento y SIG</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Sistemas de Información Geográfica (SIG):</strong> Integración de capas geoambientales</li>
+              <li><strong>Modelos hidrogeológicos:</strong> Flujo de contaminantes</li>
+              <li><strong>Análisis multicriterio:</strong> Evaluación de vulnerabilidad</li>
+              <li><strong>Teledetección:</strong> Monitoreo de cambios en el geo-ecosistema</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Indicadores Ambientales</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Bioindicadores geológicos</li>
+              <li>Parámetros de calidad de suelos</li>
+              <li>Índices de vulnerabilidad</li>
+              <li>Marcadores de contaminación</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2 class="top-space">Tabla comparativa de zonas</h2>
-  <table class="custom-table">
-    <thead>
-      <tr>
-        <th>Zona</th>
-        <th>Departamento</th>
-        <th>Tipo de recurso</th>
-        <th>Estado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Galeras</td>
-        <td>Nariño</td>
-        <td>Hidrotermal</td>
-        <td>Exploración inicial</td>
-      </tr>
-      <tr>
-        <td>Cerro Negro - Tufiño</td>
-        <td>Nariño</td>
-        <td>Hidrotermal</td>
-        <td>Monitoreo</td>
-      </tr>
-      <tr>
-        <td>Nevado del Ruiz</td>
-        <td>Caldas</td>
-        <td>Volcánico</td>
-        <td>Estudios preliminares</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Aplicaciones -->
+  <section id="aplicaciones" class="mb-5 py-4 bg-eco-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-eco" style="color: #594E40;">Aplicaciones Prácticas</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 eco-card">
+          <img src="Imagenes/aplicacion-mineria.jpg" class="card-img-top" alt="Minería sostenible">
+          <div class="card-body">
+            <h5 style="color: #594E40;">Minería Responsable</h5>
+            <ul>
+              <li>Evaluación de impactos en geo-ecosistemas</li>
+              <li>Planificación de cierres mineros</li>
+              <li>Remediación de pasivos ambientales</li>
+              <li>Restauración ecológica de áreas degradadas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 eco-card">
+          <img src="Imagenes/aplicacion-urbano.jpg" class="card-img-top" alt="Desarrollo urbano">
+          <div class="card-body">
+            <h5 style="color: #594E40;">Ordenamiento Territorial</h5>
+            <ul>
+              <li>Zonificación geoambiental</li>
+              <li>Evaluación de aptitud del suelo</li>
+              <li>Planificación de usos del territorio</li>
+              <li>Gestión de riesgos naturales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 eco-card">
+          <img src="Imagenes/aplicacion-contaminacion.jpg" class="card-img-top" alt="Remediación">
+          <div class="card-body">
+            <h5 style="color: #594E40;">Remediación Ambiental</h5>
+            <ul>
+              <li>Caracterización de sitios contaminados</li>
+              <li>Diseño de sistemas de remediación</li>
+              <li>Monitoreo de procesos de recuperación</li>
+              <li>Evaluación de eficacia de tratamientos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer class="text-center mt-5 pt-4 border-top">
-    <p>&copy; 2025 GCA Geociencias Aplicadas SAS</p>
-    <p>Especialistas en energías renovables, geotermia y consultoría técnica</p>
-  </footer>
+  <!-- Normativa -->
+  <section id="normativa" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-eco" style="color: #594E40;">Marco Normativo en Colombia</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">1974</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Decreto 2811</h5>
+              <p>Código Nacional de Recursos Naturales Renovables y de Protección al Medio Ambiente</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">1993</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Ley 99</h5>
+              <p>Creación del Ministerio del Medio Ambiente y el SINA</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2010</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Ley 1450</h5>
+              <p>Plan Nacional de Desarrollo con enfoque en sostenibilidad ambiental</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2018</div>
+            <div class="timeline-content">
+              <h5 style="color: #594E40;">Ley 1931</h5>
+              <p>Gestión del cambio climático y desarrollo bajo en carbono</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Normas Clave</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Decreto 1076/2015:</strong> Reglamenta el sector ambiente</li>
+              <li><strong>Resolución 1514/2012:</strong> Metodología para estudios ambientales</li>
+              <li><strong>Ley 1333/2009:</strong> Mecanismos de protección ambiental</li>
+              <li><strong>Decreto 2041/2014:</strong> Licencias ambientales</li>
+              <li><strong>Política Nacional para la Gestión Integral de la Biodiversidad</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</body>
-</html>
+  <!-- Casos de Estudio -->
+  <section id="casos" class="mb-5 py-4 bg-eco-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-eco" style="color: #594E40;">Casos de Estudio en Colombia</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 eco-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-choco.jpg" class="img-fluid rounded-start h-100" alt="Chocó biogeográfico" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #594E40;">Chocó Biogeográfico</h5>
+                <p><strong>Enfoque:</strong> Conservación de geo-ecosistemas en área de alta biodiversidad</p>
+                <p><strong>Resultados:</strong> Delimitación de zonas prioritarias para conservación basada en características geológicas y ecológicas</p>
+                <a href="#" class="btn btn-sm" style="background-color: #594E40; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 eco-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-bogota.jpg" class="img-fluid rounded-start h-100" alt="Humedales Bogotá" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #594E40;">Humedales de Bogotá</h5>
+                <p><strong>Enfoque:</strong> Restauración ecológica con base hidrogeológica</p>
+                <p><strong>Resultados:</strong> Recuperación de dinámica hídrica en 5 humedales urbanos</p>
+                <a href="#" class="btn btn-sm" style="background-color: #594E40; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 eco-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-amazonas.jpg" class="img-fluid rounded-start h-100" alt="Amazonas" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #594E40;">Amazonía Colombiana</h5>
+                <p><strong>Enfoque:</strong> Evaluación de impactos por minería ilegal</p>
+                <p><strong>Resultados:</strong> Modelo de recuperación de áreas degradadas por mercurio</p>
+                <a href="#" class="btn btn-sm" style="background-color: #594E40; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 eco-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-páramo.jpg" class="img-fluid rounded-start h-100" alt="Páramo" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #594E40;">Páramos Andinos</h5>
+                <p><strong>Enfoque:</strong> Protección de geo-ecosistemas estratégicos</p>
+                <p><strong>Resultados:</strong> Delimitación y plan de manejo para 3 complejos de páramos</p>
+                <a href="#" class="btn btn-sm" style="background-color: #594E40; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-eco" style="color: #594E40;">Contáctenos</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 style="color: #594E40;">Solicite una asesoría</h4>
+            <form>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" required>
+              </div>
+              <div class="mb-3">
+                <label for="empresa" class="form-label">Empresa</label>
+                <input type="text" class="form-control" id="empresa">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="servicio" class="form-label">Servicio de interés</label>
+                <select class="form-select" id="servicio">
+                  <option selected>Seleccione un servicio</option>
+                  <option>Evaluación geoambiental</option>
+                  <option>Estudios de impacto ambiental</option>
+                  <option>Remediación de suelos</option>
+                  <option>Planificación territorial</option>
+                  <option>Monitoreo de geo-ecosistemas</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Describa su proyecto</label>
+                <textarea class="form-control" id="mensaje" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn" style="background-color: #594E40; color: white;">Enviar solicitud</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 style="color: #594E40;">Nuestros especialistas</h4>
+            <div class="mb-4">
+              <img src="Imagenes/equipo-geoeco.jpg" alt="Equipo de geo-ecosistemas" class="img-fluid rounded">
+            </div>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-geo-alt-fill me-2" style="color: #C0B59B;"></i> Cra 45 #26-85, Bogotá, Colombia</li>
+              <li><i class="bi bi-telephone-fill me-2" style="color: #C0B59B;"></i> +57 1 123 4567</li>
+              <li><i class="bi bi-envelope-fill me-2" style="color: #C0B59B;"></i> geoeco@geoconsultores.com</li>
+              <li><i class="bi bi-clock-fill me-2" style="color: #C0B59B;"></i> Lunes a Viernes: 8:00 am - 5:00 pm</li>
+            </ul>
+            <hr>
+            <h5 style="color: #594E40;">Recursos</h5>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-pdf"></i> Guía metodológica</a>
+              <a href="#" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-word"></i> Formatos</a>
+              <a href="#" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-text"></i> Artículos técnicos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background-color: #594E40; color: white;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>Geoconsultores Asociados</h5>
+        <p>Especialistas en geo-ecosistemas ambientales con enfoque multidisciplinario.</p>
+        <div class="social-icons">
+          <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Servicios</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Estudios geoambientales</a></li>
+          <li><a href="#" class="text-white">Evaluación de impactos</a></li>
+          <li><a href="#" class="text-white">Remediación de suelos</a></li>
+          <li><a href="#" class="text-white">Planificación territorial</a></li>
+          <li><a href="#" class="text-white">Capacitación técnica</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Certificaciones</h5>
+        <div class="d-flex flex-wrap gap-3">
+          <img src="Imagenes/certificacion-iso-14001.png" alt="ISO 14001" style="height: 50px;">
+          <img src="Imagenes/certificacion-anla.png" alt="ANLA" style="height: 50px;">
+          <img src="Imagenes/certificacion-icontect.png" alt="ICONTEC" style="height: 50px;">
+        </div>
+        <div class="mt-3">
+          <p class="small">Acreditados para estudios ambientales ante autoridades competentes.</p>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4" style="border-color: #C0B59B;">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-0">© 2023 Geoconsultores Asociados. Todos los derechos reservados.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="#" class="text-white me-3">Política de privacidad</a>
+        <a href="#" class="text-white me-3">Términos de servicio</a>
+        <a href="#" class="text-white">Mapa del sitio</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Botón WhatsApp -->
+<a href="https://wa.me/573001234567" target="_blank" class="whatsapp-btn">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Scripts de Bootstrap -->
+<script src="https://cdn.jsdelivr.net
