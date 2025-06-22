@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos Hídricos | GCA - Geoconsultores Asociados</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFFFFF;
+      color: #594E40;
+      padding-top: 112px;
+    }
+    .top-bar {
+      background-color: #C0B59B;
+      padding: 5px 0;
+      font-size: 14px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
+    }
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    .navbar-brand img {
+      height: 80px;
+    }
+    .sticky-nav {
+      position: fixed;
+      top: 24px;
+      width: 100%;
+      z-index: 1020;
+    }
+    .secondary-nav {
+      position: sticky;
+      top: 112px;
+      z-index: 1010;
+      background-color: white;
+    }
+    .footer {
+      background-color: #594E40;
+      color: #fff;
+      padding: 40px 0;
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -112px;
+    }
+    .water-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid #4A90E2;
+    }
+    .water-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .water-icon {
+      font-size: 2.5rem;
+      color: #4A90E2;
+      margin-bottom: 1rem;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background-color: #128C7E;
+    }
+    .border-water {
+      border-bottom: 3px solid #4A90E2;
+    }
+    .bg-water-light {
+      background-color: #f0f8ff;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #4A90E2;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .timeline-date {
+      position: absolute;
+      left: -50px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      background: #4A90E2;
+      color: white;
+      font-weight: bold;
+    }
+    .timeline-content {
+      padding: 15px;
+      background: white;
+      border-radius: 5px;
+      border-left: 3px solid #4A90E2;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .method-badge {
+      background-color: #4A90E2;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar text-center">
+  <span>
+    <i class="bi bi-telephone"></i> +57 300 123 4567 |
+    <i class="bi bi-geo-alt"></i> Bogotá, Colombia |
+    <i class="bi bi-envelope"></i> info@geoconsultores.com |
+    <i class="bi bi-facebook"></i> /GCA |
+    <i class="bi bi-instagram"></i> @GCA
+  </span>
+</div>
+
+<!-- Navigation Principal -->
+<nav class="navbar navbar-expand-lg sticky-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo GCA"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown">Servicios</a>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="geofisica.html">Geofísica</a></li>
+              <li><a class="dropdown-item" href="geotecnia.html">Geotecnia</a></li>
+              <li><a class="dropdown-item" href="geotermia.html">Geotermia</a></li>
+              <li><a class="dropdown-item" href="licencias.html">Licencias de Construcción</a></li>                     
+              <li><a class="dropdown-item" href="medio-ambiente.html">Medio Ambiente</a></li>
+              <li><a class="dropdown-item active" href="agua.html">Recursos Hídricos</a></li>             
+              <li><a class="dropdown-item" href="sig.html">SIG</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Cabecera con imagen destacada -->
+<section class="hero-section" style="background-image: linear-gradient(rgba(74, 144, 226, 0.7), rgba(74, 144, 226, 0.7)), url('Imagenes/recursos-hidricos.jpg');">
+  <div class="container text-center text-white">
+    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">RECURSOS HÍDRICOS</h1>
+    <p class="lead" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); max-width: 800px; margin: 0 auto;">
+      Evaluación integral desde las geociencias: geología, geomorfología, hidrogeología y geofísica
+    </p>
+  </div>
+</section>
+
+<!-- Barra de navegación interna -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white secondary-nav">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWater">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarWater">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#definicion">¿Qué es?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#componentes">Componentes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#metodos">Métodos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#rondas">Rondas Hídricas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#normativa">Normativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#casos">Casos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<main class="container py-5">
+  <!-- Definición -->
+  <section id="definicion" class="mb-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="fw-bold border-bottom pb-2 border-water" style="color: #4A90E2;">Recursos Hídricos desde las Geociencias</h2>
+        <p>El estudio integral de los recursos hídricos combina disciplinas geocientíficas para entender el origen, distribución, calidad y dinámica del agua superficial y subterránea.</p>
+        <p>Este enfoque multidisciplinario permite:</p>
+        <ul>
+          <li>Evaluar la disponibilidad y sostenibilidad del recurso hídrico</li>
+          <li>Identificar zonas de recarga y descarga de acuíferos</li>
+          <li>Prevenir riesgos asociados a dinámicas hídricas</li>
+          <li>Planificar el uso sostenible del agua</li>
+        </ul>
+        <div class="alert alert-primary mt-3">
+          <strong>Enfoque clave:</strong> Comprender el ciclo hidrológico desde la interacción entre geología, relieve y sistemas acuíferos.
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="Imagenes/ciclo-hidrologico.jpg" alt="Ciclo hidrológico geológico" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 1. Interacción geológica en el ciclo hídrico</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <!-- Componentes -->
+  <section id="componentes" class="mb-5 py-4 bg-water-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-water" style="color: #4A90E2;">Componentes del Estudio Hídrico</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 water-card">
+          <div class="card-body text-center">
+            <i class="bi bi-geo-alt-fill water-icon"></i>
+            <h4 style="color: #4A90E2;">Geológico</h4>
+            <p>Analiza la estructura y composición del terreno que condiciona el agua:</p>
+            <ul class="text-start small">
+              <li>Litología y permeabilidad</li>
+              <li>Estructuras geológicas</li>
+              <li>Zonas de fracturación</li>
+              <li>Procesos geodinámicos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 water-card">
+          <div class="card-body text-center">
+            <i class="bi bi-mountain water-icon"></i>
+            <h4 style="color: #4A90E2;">Geomorfológico</h4>
+            <p>Estudia las formas del terreno y su relación con el agua:</p>
+            <ul class="text-start small">
+              <li>Redes de drenaje</li>
+              <li>Terrazas fluviales</li>
+              <li>Procesos erosivos</li>
+              <li>Zonas inundables</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 water-card">
+          <div class="card-body text-center">
+            <i class="bi bi-droplet-fill water-icon"></i>
+            <h4 style="color: #4A90E2;">Hidrogeológico</h4>
+            <p>Investiga las aguas subterráneas:</p>
+            <ul class="text-start small">
+              <li>Caracterización de acuíferos</li>
+              <li>Flujos subterráneos</li>
+              <li>Balance hídrico</li>
+              <li>Vulnerabilidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 water-card">
+          <div class="card-body text-center">
+            <i class="bi bi-magnet-fill water-icon"></i>
+            <h4 style="color: #4A90E2;">Geofísico</h4>
+            <p>Métodos no invasivos para estudiar el agua:</p>
+            <ul class="text-start small">
+              <li>Localización de acuíferos</li>
+              <li>Salinidad de aguas</li>
+              <li>Contaminación subterránea</li>
+              <li>Estructuras del subsuelo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Métodos -->
+  <section id="metodos" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-water" style="color: #4A90E2;">Métodos de Estudio</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #4A90E2; color: white;">
+            <h5 class="mb-0">Geología y Geomorfología</h5>
+          </div>
+          <div class="card-body">
+            <span class="badge method-badge mb-2">Cartografía</span>
+            <span class="badge method-badge mb-2">Perfiles estratigráficos</span>
+            <span class="badge method-badge mb-2">SIG</span>
+            <span class="badge method-badge mb-2">LiDAR</span>
+            <p class="mt-2">Análisis integrado de mapas geológicos y modelos digitales del terreno para identificar:</p>
+            <ul>
+              <li>Zonas de recarga hídrica</li>
+              <li>Corredores fluviales</li>
+              <li>Áreas con potencial acuífero</li>
+              <li>Riesgos de erosión</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #4A90E2; color: white;">
+            <h5 class="mb-0">Hidrogeología</h5>
+          </div>
+          <div class="card-body">
+            <span class="badge method-badge mb-2">Piezometría</span>
+            <span class="badge method-badge mb-2">Pruebas de bombeo</span>
+            <span class="badge method-badge mb-2">Trazadores</span>
+            <span class="badge method-badge mb-2">MODFLOW</span>
+            <p class="mt-2">Evaluación cuantitativa y cualitativa de aguas subterráneas mediante:</p>
+            <ul>
+              <li>Redes de monitoreo</li>
+              <li>Modelación numérica</li>
+              <li>Balance hídrico</li>
+              <li>Análisis isotópico</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #4A90E2; color: white;">
+            <h5 class="mb-0">Geofísica</h5>
+          </div>
+          <div class="card-body">
+            <span class="badge method-badge mb-2">ERT</span>
+            <span class="badge method-badge mb-2">TDEM</span>
+            <span class="badge method-badge mb-2">Georadar</span>
+            <span class="badge method-badge mb-2">Sísmica</span>
+            <p class="mt-2">Técnicas no invasivas para caracterización del subsuelo:</p>
+            <ul>
+              <li>Resistividad eléctrica (acuíferos)</li>
+              <li>Electromagnetismo (contaminación)</li>
+              <li>Radar (estructuras superficiales)</li>
+              <li>Sísmica (basamento rocoso)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #4A90E2; color: white;">
+            <h5 class="mb-0">Análisis de Calidad</h5>
+          </div>
+          <div class="card-body">
+            <span class="badge method-badge mb-2">Fisicoquímica</span>
+            <span class="badge method-badge mb-2">Isótopos</span>
+            <span class="badge method-badge mb-2">Microbiología</span>
+            <span class="badge method-badge mb-2">Modelación</span>
+            <p class="mt-2">Evaluación integral de la calidad del agua:</p>
+            <ul>
+              <li>Parámetros físico-químicos</li>
+              <li>Contaminantes emergentes</li>
+              <li>Origen de contaminación</li>
+              <li>Modelos de dispersión</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aplicaciones -->
+  <section id="aplicaciones" class="mb-5 py-4 bg-water-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-water" style="color: #4A90E2;">Aplicaciones y Servicios</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 water-card">
+          <img src="Imagenes/acuifero.jpg" class="card-img-top" alt="Exploración acuífera">
+          <div class="card-body">
+            <h5 style="color: #4A90E2;">Exploración de Acuíferos</h5>
+            <ul>
+              <li>Caracterización hidrogeológica</li>
+              <li>Ubicación óptima para pozos</li>
+              <li>Estimación de reservas</li>
+              <li>Modelos conceptuales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 water-card">
+          <img src="Imagenes/contaminacion.jpg" class="card-img-top" alt="Contaminación hídrica">
+          <div class="card-body">
+            <h5 style="color: #4A90E2;">Calidad del Agua</h5>
+            <ul>
+              <li>Estudios de vulnerabilidad</li>
+              <li>Plumas de contaminación</li>
+              <li>Remediación natural</li>
+              <li>Monitoreo continuo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 water-card">
+          <img src="Imagenes/inundacion.jpg" class="card-img-top" alt="Riesgo hídrico">
+          <div class="card-body">
+            <h5 style="color: #4A90E2;">Gestión de Riesgos</h5>
+            <ul>
+              <li>Mapas de inundación</li>
+              <li>Estabilidad de laderas</li>
+              <li>Erosión fluvial</li>
+              <li>Modelos predictivos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rondas Hídricas -->
+  <section id="rondas" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-water" style="color: #4A90E2;">Análisis Geomorfológico de Rondas Hídricas</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <h4 style="color: #4A90E2;">Metodología</h4>
+        <p>Evaluación integral para delimitar zonas de protección de cuerpos de agua considerando:</p>
+        <ol>
+          <li><strong>Análisis histórico:</strong> Máximas crecientes registradas</li>
+          <li><strong>Geomorfología fluvial:</strong> Terrazas, llanuras de inundación</li>
+          <li><strong>Procesos dinámicos:</strong> Erosión, sedimentación</li>
+          <li><strong>Modelación hidráulica:</strong> Caudales máximos</li>
+        </ol>
+        <div class="alert alert-info mt-3">
+          <strong>Norma Colombiana:</strong> Resolución 1503 de 2010 establece la metodología para delimitar rondas hídricas.
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header" style="background-color: #4A90E2; color: white;">
+            <h5 class="mb-0">Componentes del Estudio</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Cartografía geomorfológica</strong> (1:5,000)</li>
+              <li><strong>Perfiles topográficos</strong> transversales al cauce</li>
+              <li><strong>Análisis sedimentológico</strong> de depósitos</li>
+              <li><strong>Modelación hidrodinámica</strong> (HEC-RAS, IBER)</li>
+              <li><strong>Zonificación de riesgos</strong></li>
+              <li><strong>Propuesta de medidas</strong> de protección</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="Imagenes/ronda-rio.jpg" class="card-img-top" alt="Ronda hídrica">
+          <div class="card-body">
+            <h5 style="color: #4A90E2;">Caso: Río Bogotá</h5>
+            <p>Delimitación de ronda considerando:</p>
+            <ul>
+              <li>Histórico de inundaciones (30 años)</li>
+              <li>Análisis de terrazas aluviales</li>
+              <li>Zonas de mayor dinamismo fluvial</li>
+              <li>Áreas de recarga acuífera</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="Imagenes/ronda-que.jpg" class="card-img-top" alt="Ronda quebrada">
+          <div class="card-body">
+            <h5 style="color: #4A90E2;">Caso: Quebradas Urbanas</h5>
+            <p>Evaluación en Medellín considerando:</p>
+            <ul>
+              <li>Procesos torrenciales</li>
+              <li>Zonas de deslizamiento asociadas</li>
+              <li>Áreas de amortiguamiento</li>
+              <li>Conflictos con expansión urbana</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Normativa -->
+  <section id="normativa" class="mb-5 py-4 bg-water-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-water" style="color: #4A90E2;">Marco Normativo en Colombia</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #4A90E2; color: white;">
+            <h5 class="mb-0">Legislación General</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Ley 99 de 1993:</strong> Creación del SINA y política hídrica</li>
+              <li><strong>Decreto 1076 de 2015:</strong> Reglamenta uso y protección</li>
+              <li><strong>Ley 1450 de 2011:</strong> Plan Nacional de Desarrollo</li>
+              <li><strong>Politica Nacional del Recurso Hídrico</strong> (2010)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #4A90E2; color: white;">
+            <h5 class="mb-0">Normas Técnicas</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Resolución 1503 de 2010:</strong> Metodología rondas hídricas</li>
+              <li><strong>Resolución 631 de 2015:</strong> Límites permisibles vertimientos</li>
+              <li><strong>Resolución 1176 de 2018:</strong> Criterios acuíferos</li>
+              <li><strong>Guías Técnicas del IDEAM</strong> para estudios hídricos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header" style="background-color: #4A90E2; color: white;">
+        <h5 class="mb-0">Instrumentos de Gestión</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h6>POMCA</h6>
+            <p class="small">Planes de Ordenación y Manejo de Cuencas</p>
+          </div>
+          <div class="col-md-4">
+            <h6>PRAE</h6>
+            <p class="small">Planes de Recuperación de Áreas Estratégicas</p>
+          </div>
+          <div class="col-md-4">
+            <h6>PGA</h6>
+            <p class="small">Planes de Gestión del Riesgo por Inundación</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos de Estudio -->
+  <section id="casos" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-water" style="color: #4A90E2;">Casos de Estudio en Colombia</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 water-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-guajira.jpg" class="img-fluid rounded-start h-100" alt="Guajira" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #4A90E2;">Acuíferos de La Guajira</h5>
+                <p><strong>Enfoque:</strong> Exploración hidrogeológica en zona árida</p>
+                <p><strong>Métodos:</strong> ERT, sondeos, modelación MODFLOW</p>
+                <p><strong>Resultados:</strong> Identificación de 3 acuíferos con potencial para abastecimiento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 water-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-bogota-humedal.jpg" class="img-fluid rounded-start h-100" alt="Humedal Bogotá" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #4A90E2;">Humedal Juan Amarillo</h5>
+                <p><strong>Enfoque:</strong> Restauración hidrogeomorfológica</p>
+                <p><strong>Métodos:</strong> Cartografía histórica, modelación hidráulica</p>
+                <p><strong>Resultados:</strong> Recuperación de 12 ha de espejo de agua</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 water-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-cauca.jpg" class="img-fluid rounded-start h-100" alt="Valle del Cauca" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #4A90E2;">Valle del Cauca</h5>
+                <p><strong>Enfoque:</strong> Contaminación por actividad agrícola</p>
+                <p><strong>Métodos:</strong> Geoquímica, isotopía, modelación</p>
+                <p><strong>Resultados:</strong> Plan de manejo para reducción de nitratos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 water-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-amazonas-agua.jpg" class="img-fluid rounded-start h-100" alt="Amazonas" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #4A90E2;">Amazonas</h5>
+                <p><strong>Enfoque:</strong> Dinámica hídrica superficial</p>
+                <p><strong>Métodos:</strong> Teledetección, SIG, trabajo de campo</p>
+                <p><strong>Resultados:</strong> Modelo predictivo de inundaciones</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-water" style="color: #4A90E2;">Contáctenos</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 style="color: #4A90E2;">Solicite un estudio hídrico</h4>
+            <form>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" required>
+              </div>
+              <div class="mb-3">
+                <label for="empresa" class="form-label">Empresa</label>
+                <input type="text" class="form-control" id="empresa">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="servicio" class="form-label">Servicio de interés</label>
+                <select class="form-select" id="servicio">
+                  <option selected>Seleccione un servicio</option>
+                  <option>Estudios hidrogeológicos</option>
+                  <option>Delimitación de rondas hídricas</option>
+                  <option>Exploración de acuíferos</option>
+                  <option>Calidad de aguas</option>
+                  <option>Modelación hídrica</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Describa su proyecto</label>
+                <textarea class="form-control" id="mensaje" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn" style="background-color: #4A90E2
