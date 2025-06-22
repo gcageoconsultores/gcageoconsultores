@@ -15,11 +15,16 @@
       font-family: 'Poppins', sans-serif;
       background-color: #FFFFFF;
       color: #594E40;
+      padding-top: 112px; /* Ajuste para la barra de navegación fija */
     }
     .top-bar {
       background-color: #C0B59B;
       padding: 5px 0;
       font-size: 14px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
     }
     .navbar {
       background-color: #ffffff;
@@ -29,26 +34,39 @@
       height: 80px;
     }
     .sticky-nav {
-      top: 0;
+      position: fixed;
+      top: 24px; /* Altura del top-bar */
+      width: 100%;
       z-index: 1020;
+    }
+    .secondary-nav {
       position: sticky;
+      top: 112px; /* Altura del top-bar + navbar principal */
+      z-index: 1010;
+      background-color: white;
     }
     .footer {
       background-color: #594E40;
       color: #fff;
       padding: 40px 0;
     }
-    .blog-green {
-      background-color: #eaf4ec;
-    }
-    .section-green {
-      background-color: #d3e8d4;
-    }
     .blog-img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -112px; /* Compensa el padding-top del body */
     }
     /* Estilo para el botón de WhatsApp */
     .whatsapp-btn {
@@ -72,10 +90,32 @@
       transform: scale(1.1);
       background-color: #128C7E;
     }
-    /* Ajuste para la segunda barra de navegación */
-    .secondary-nav {
-      top: 112px; /* Ajusta según la altura de tu primera barra de navegación */
-      z-index: 1010;
+    .border-bottom {
+      border-bottom: 2px solid #C0B59B !important;
+    }
+    .card {
+      transition: transform 0.3s;
+      border: 1px solid #ddd;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #C0B59B !important;
+      transform: translateY(-3px);
+    }
+    .list-unstyled li {
+      margin-bottom: 0.5rem;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #f4f4f4;
+      color: #594E40;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -85,9 +125,9 @@
 <!-- Top Bar -->
 <div class="top-bar text-center">
   <span>
-    <i class="bi bi-telephone"></i> +xxxxxxxxxxxxxx3 |
-    <i class="bi bi-geo-alt"></i> xxxxxxxxxxxxxxxxxxxxxxxx. |
-    <i class="bi bi-envelope"></i> xxxxxxxxxxxxxxxxxxxxxxxxxxx@gmail.com |
+    <i class="bi bi-telephone"></i> +57 300 123 4567 |
+    <i class="bi bi-geo-alt"></i> Bogotá, Colombia |
+    <i class="bi bi-envelope"></i> info@geoconsultores.com |
     <i class="bi bi-facebook"></i> /GCA |
     <i class="bi bi-instagram"></i> @GCA
   </span>
@@ -133,7 +173,7 @@
 </section>
 
 <!-- Barra de navegación interna -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top secondary-nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-white secondary-nav">
   <div class="container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGeofisica">
       <span class="navbar-toggler-icon"></span>
@@ -177,21 +217,395 @@
     </div>
   </section>
 
-  <!-- Resto del contenido se mantiene igual -->
-  <!-- ... -->
+  <!-- Métodos Geofísicos -->
+  <section id="metodos" class="mb-5 py-4 rounded" style="background-color: #f4f4f4;">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Métodos Geofísicos</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <img src="Imagenes/metodo-sismica.jpg" class="card-img-top" alt="Método sísmico">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #594E40;">Sísmica</h5>
+            <p class="card-text">Estudio de propagación de ondas elásticas para determinar estructuras subterráneas.</p>
+            <ul class="list-unstyled small">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Reflexión</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Refracción</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> MASW</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <img src="Imagenes/metodo-electrica.jpg" class="card-img-top" alt="Método eléctrico">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #594E40;">Eléctrica</h5>
+            <p class="card-text">Medición de resistividad y cargaabilidad del subsuelo.</p>
+            <ul class="list-unstyled small">
+              <li><i class="bi bi-check-circle-fill text-success"></i> SEV</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Tomografía</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> IP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <img src="Imagenes/metodo-magnetico.jpg" class="card-img-top" alt="Método magnético">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #594E40;">Magnético</h5>
+            <p class="card-text">Detección de variaciones en el campo magnético terrestre.</p>
+            <ul class="list-unstyled small">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Magnetometría</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Gradiometría</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <img src="Imagenes/metodo-gravimetrico.jpg" class="card-img-top" alt="Método gravimétrico">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #594E40;">Gravimétrico</h5>
+            <p class="card-text">Medición de variaciones en el campo gravitatorio.</p>
+            <ul class="list-unstyled small">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Microgravimetría</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Gravimetría terrestre</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Aplicaciones -->
+  <section id="aplicaciones" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Aplicaciones de la Geofísica</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Exploración Minera</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Detección de cuerpos mineralizados</li>
+              <li>Delimitación de yacimientos</li>
+              <li>Exploración de vetas y diseminados</li>
+              <li>Caracterización de depósitos</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Hidrogeología</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Localización de acuíferos</li>
+              <li>Determinación de profundidad a nivel freático</li>
+              <li>Estudios de salinidad</li>
+              <li>Detección de fracturas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Ingeniería Civil</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Estudios de cimentación</li>
+              <li>Detección de cavidades</li>
+              <li>Evaluación de roca competente</li>
+              <li>Localización de servicios enterrados</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #594E40; color: white;">
+            <h5 class="mb-0">Medio Ambiente</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Mapeo de contaminantes</li>
+              <li>Detección de plumas de contaminación</li>
+              <li>Localización de tanques enterrados</li>
+              <li>Monitoreo de remediación</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="mb-5 py-4 rounded" style="background-color: #f4f4f4;">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Nuestros Servicios Técnicos</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="bi bi-cpu-fill display-4 mb-3" style="color: #C0B59B;"></i>
+            <h4 style="color: #594E40;">Adquisición de Datos</h4>
+            <ul class="text-start">
+              <li>Sísmica de reflexión/refracción</li>
+              <li>Tomografía eléctrica</li>
+              <li>Magnetometría terrestre/aérea</li>
+              <li>Sondeos electromagnéticos</li>
+              <li>Gravimetría de alta precisión</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="bi bi-diagram-3-fill display-4 mb-3" style="color: #C0B59B;"></i>
+            <h4 style="color: #594E40;">Procesamiento e Interpretación</h4>
+            <ul class="text-start">
+              <li>Procesamiento digital de datos</li>
+              <li>Modelamiento 2D/3D</li>
+              <li>Inversión de datos geofísicos</li>
+              <li>Integración multidisciplinaria</li>
+              <li>Informes técnicos especializados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="bi bi-gear-fill display-4 mb-3" style="color: #C0B59B;"></i>
+            <h4 style="color: #594E40;">Equipos Especializados</h4>
+            <ul class="text-start">
+              <li>Sismógrafos de 24 canales</li>
+              <li>Resistivímetros multielectrodo</li>
+              <li>Magnetómetros de protones</li>
+              <li>Sistemas GPR (Georadar)</li>
+              <li>Gravímetros digitales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-3">
+      <a href="#contacto" class="btn btn-lg" style="background-color: #594E40; color: white;">Solicitar cotización</a>
+    </div>
+  </section>
+
+  <!-- Casos de Estudio -->
+  <section id="casos" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Casos de Estudio</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-mineria.jpg" class="img-fluid rounded-start h-100" alt="Exploración minera" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #594E40;">Exploración de Oro en Antioquia</h5>
+                <p><strong>Métodos:</strong> IP/Resistividad y Magnetometría</p>
+                <p><strong>Resultados:</strong> Identificación de 3 zonas mineralizadas con potencial económico</p>
+                <a href="#" class="btn btn-sm" style="background-color: #C0B59B; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-acuifero.jpg" class="img-fluid rounded-start h-100" alt="Detección de acuífero" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #594E40;">Localización de Acuífero en La Guajira</h5>
+                <p><strong>Métodos:</strong> Sondeo Eléctrico Vertical y TEM</p>
+                <p><strong>Resultados:</strong> Acuífero a 120m de profundidad con caudal de 15 l/s</p>
+                <a href="#" class="btn btn-sm" style="background-color: #C0B59B; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-arqueologia.jpg" class="img-fluid rounded-start h-100" alt="Arqueología" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #594E40;">Prospección Arqueológica en Tierradentro</h5>
+                <p><strong>Métodos:</strong> Georadar y Magnetometría</p>
+                <p><strong>Resultados:</strong> Localización de 5 tumbas precolombinas no excavadas</p>
+                <a href="#" class="btn btn-sm" style="background-color: #C0B59B; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-contaminacion.jpg" class="img-fluid rounded-start h-100" alt="Contaminación" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #594E40;">Mapeo de Contaminación en Refinería</h5>
+                <p><strong>Métodos:</strong> Tomografía eléctrica y EM</p>
+                <p><strong>Resultados:</strong> Delimitación de pluma de hidrocarburos a 8m de profundidad</p>
+                <a href="#" class="btn btn-sm" style="background-color: #C0B59B; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="mb-5 py-4 rounded" style="background-color: #f4f4f4;">
+    <h2 class="fw-bold border-bottom pb-2" style="color: #594E40;">Contáctenos</h2>
+    
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 style="color: #594E40;">Solicite una asesoría</h4>
+            <form>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" required>
+              </div>
+              <div class="mb-3">
+                <label for="empresa" class="form-label">Empresa</label>
+                <input type="text" class="form-control" id="empresa">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="servicio" class="form-label">Servicio de interés</label>
+                <select class="form-select" id="servicio">
+                  <option selected>Seleccione un servicio</option>
+                  <option>Exploración minera</option>
+                  <option>Estudios hidrogeológicos</option>
+                  <option>Geotecnia e ingeniería civil</option>
+                  <option>Investigación ambiental</option>
+                  <option>Prospección arqueológica</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Describa su proyecto</label>
+                <textarea class="form-control" id="mensaje" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn" style="background-color: #594E40; color: white;">Enviar solicitud</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 style="color: #594E40;">Nuestras oficinas</h4>
+            <div class="mb-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.785931816786!2d-74.083905924682!3d4.638129942540608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3b0f0e0e0f%3A0x1b8c3b0f0e0e0e0f!2sGeoconsultores%20Asociados!5e0!3m2!1sen!2sco!4v1620000000000!5m2!1sen!2sco" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-geo-alt-fill me-2" style="color: #C0B59B;"></i> Cra 45 #26-85, Bogotá, Colombia</li>
+              <li><i class="bi bi-telephone-fill me-2" style="color: #C0B59B;"></i> +57 1 123 4567</li>
+              <li><i class="bi bi-envelope-fill me-2" style="color: #C0B59B;"></i> geofisica@geoconsultores.com</li>
+              <li><i class="bi bi-clock-fill me-2" style="color: #C0B59B;"></i> Lunes a Viernes: 8:00 am - 5:00 pm</li>
+            </ul>
+            <hr>
+            <h5 style="color: #594E40;">Descargables</h5>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-pdf"></i> Brochure PDF</a>
+              <a href="#" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-word"></i> Formatos</a>
+              <a href="#" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-text"></i> Términos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- Footer -->
 <footer class="py-5" style="background-color: #594E40; color: white;">
   <div class="container">
-    <!-- Contenido del footer se mantiene igual -->
-    <!-- ... -->
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>Geoconsultores Asociados</h5>
+        <p>Especialistas en geofísica aplicada con tecnología de punta para exploración del subsuelo.</p>
+        <div class="social-icons">
+          <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Métodos Geofísicos</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Sísmica</a></li>
+          <li><a href="#" class="text-white">Eléctrica/Electromagnética</a></li>
+          <li><a href="#" class="text-white">Magnetometría</a></li>
+          <li><a href="#" class="text-white">Gravimetría</a></li>
+          <li><a href="#" class="text-white">Georadar (GPR)</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Certificaciones</h5>
+        <div class="d-flex flex-wrap gap-3">
+          <img src="Imagenes/certificacion-icp.png" alt="ICP" style="height: 50px;">
+          <img src="Imagenes/certificacion-iso.png" alt="ISO" style="height: 50px;">
+          <img src="Imagenes/certificacion-sgc.png" alt="SGC" style="height: 50px;">
+        </div>
+        <div class="mt-3">
+          <p class="small">Acreditados por el Servicio Geológico Colombiano para estudios geofísicos.</p>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4" style="border-color: #C0B59B;">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-0">© 2023 Geoconsultores Asociados. Todos los derechos reservados.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="#" class="text-white me-3">Política de privacidad</a>
+        <a href="#" class="text-white me-3">Términos de servicio</a>
+        <a href="#" class="text-white">Mapa del sitio</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <!-- Botón WhatsApp (solo uno) -->
-<a href="https://wa.me/57xxxxxxxx" target="_blank" class="whatsapp-btn">
+<a href="https://wa.me/573001234567" target="_blank" class="whatsapp-btn">
   <i class="bi bi-whatsapp"></i>
 </a>
 
