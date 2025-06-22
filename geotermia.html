@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<!-- Mantiene el HEAD, estilos, top-bar y navegación del archivo principal -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geotermia | GCA - Geoconsultores Asociados</title>
+  <title>Geofísica | GCA - Geoconsultores Asociados</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -16,11 +15,16 @@
       font-family: 'Poppins', sans-serif;
       background-color: #FFFFFF;
       color: #594E40;
+      padding-top: 112px; /* Ajuste para la barra de navegación fija */
     }
     .top-bar {
       background-color: #C0B59B;
       padding: 5px 0;
       font-size: 14px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
     }
     .navbar {
       background-color: #ffffff;
@@ -29,26 +33,89 @@
     .navbar-brand img {
       height: 80px;
     }
-    .sticky-top {
-      top: 0;
+    .sticky-nav {
+      position: fixed;
+      top: 24px; /* Altura del top-bar */
+      width: 100%;
       z-index: 1020;
+    }
+    .secondary-nav {
+      position: sticky;
+      top: 112px; /* Altura del top-bar + navbar principal */
+      z-index: 1010;
+      background-color: white;
     }
     .footer {
       background-color: #594E40;
       color: #fff;
       padding: 40px 0;
     }
-    .blog-green {
-      background-color: #eaf4ec;
-    }
-    .section-green {
-      background-color: #d3e8d4;
-    }
     .blog-img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -112px; /* Compensa el padding-top del body */
+    }
+    /* Estilo para el botón de WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background-color: #128C7E;
+    }
+    .border-bottom {
+      border-bottom: 2px solid #C0B59B !important;
+    }
+    .card {
+      transition: transform 0.3s;
+      border: 1px solid #ddd;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #C0B59B !important;
+      transform: translateY(-3px);
+    }
+    .list-unstyled li {
+      margin-bottom: 0.5rem;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #f4f4f4;
+      color: #594E40;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -58,16 +125,16 @@
 <!-- Top Bar -->
 <div class="top-bar text-center">
   <span>
-    <i class="bi bi-telephone"></i> +57 305 728 7714 - +57 320 836 8473 |
-    <i class="bi bi-geo-alt"></i> Carrera 151C # 139 24, Santa Rita de Suba, Bogotá D.C. |
+    <i class="bi bi-telephone"></i> +57 305 728 7714 |
+    <i class="bi bi-geo-alt"></i> Bogotá, Colombia |
     <i class="bi bi-envelope"></i> gcageoconsultoresasociados@gmail.com |
     <i class="bi bi-facebook"></i> /GCA |
     <i class="bi bi-instagram"></i> @GCA
   </span>
 </div>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg sticky-top">
+<!-- Navigation Principal -->
+<nav class="navbar navbar-expand-lg sticky-nav">
   <div class="container">
     <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo GCA"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -96,29 +163,29 @@
 </nav>
 
 <!-- Cabecera con imagen destacada -->
-<section class="bienvenida text-center text-white py-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Imagenes/geotermia.jpg'); background-size: cover; background-position: center;">
-  <div class="container">
-    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">ENERGÍA GEOTÉRMICA EN COLOMBIA</h1>
+<section class="hero-section" style="background-image: linear-gradient(rgba(89, 78, 64, 0.7), rgba(89, 78, 64, 0.7)), url('Imagenes/Geofisica/geofisica-3.jpg');">
+  <div class="container text-center text-white">
+    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">GEOFÍSICA APLICADA</h1>
     <p class="lead" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); max-width: 800px; margin: 0 auto;">
-      Explorando el potencial del calor terrestre: Tecnología, aplicaciones y marco regulatorio para la transición energética
+      Soluciones no invasivas para exploración del subsuelo mediante métodos físicos
     </p>
   </div>
 </section>
 
 <!-- Barra de navegación interna -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white secondary-nav">
   <div class="container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGeotermia">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGeofisica">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarGeotermia">
+    <div class="collapse navbar-collapse" id="navbarGeofisica">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" href="#introduccion">Introducción</a></li>
-        <li class="nav-item"><a class="nav-link" href="#potencial">Potencial</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tecnologia">Tecnología</a></li>
+        <li class="nav-item"><a class="nav-link" href="#definicion">¿Qué es Geofísica?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#metodos">Métodos Geofísicos</a></li>
         <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
-        <li class="nav-item"><a class="nav-link" href="#normativa">Normativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicios">Nuestros Servicios</a></li>
         <li class="nav-item"><a class="nav-link" href="#casos">Casos de Estudio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
       </ul>
     </div>
   </div>
