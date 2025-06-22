@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIG en Geociencias | GCA - Geoconsultores Asociados</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFFFFF;
+      color: #333;
+      padding-top: 112px;
+    }
+    .top-bar {
+      background-color: #2E7D32;
+      padding: 5px 0;
+      font-size: 14px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
+      color: white;
+    }
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    .navbar-brand img {
+      height: 80px;
+    }
+    .sticky-nav {
+      position: fixed;
+      top: 24px;
+      width: 100%;
+      z-index: 1020;
+    }
+    .secondary-nav {
+      position: sticky;
+      top: 112px;
+      z-index: 1010;
+      background-color: white;
+    }
+    .footer {
+      background-color: #1B5E20;
+      color: #fff;
+      padding: 40px 0;
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -112px;
+    }
+    .gis-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid #2E7D32;
+    }
+    .gis-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .gis-icon {
+      font-size: 2.5rem;
+      color: #2E7D32;
+      margin-bottom: 1rem;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background-color: #128C7E;
+    }
+    .border-gis {
+      border-bottom: 3px solid #2E7D32;
+    }
+    .bg-gis-light {
+      background-color: #E8F5E9;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #2E7D32;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .timeline-date {
+      position: absolute;
+      left: -50px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      background: #2E7D32;
+      color: white;
+      font-weight: bold;
+    }
+    .timeline-content {
+      padding: 15px;
+      background: white;
+      border-radius: 5px;
+      border-left: 3px solid #2E7D32;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .method-badge {
+      background-color: #2E7D32;
+      color: white;
+    }
+    .tech-logo {
+      height: 50px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar text-center">
+  <span>
+    <i class="bi bi-telephone"></i> +57 300 123 4567 |
+    <i class="bi bi-geo-alt"></i> Bogotá, Colombia |
+    <i class="bi bi-envelope"></i> info@geoconsultores.com |
+    <i class="bi bi-facebook"></i> /GCA |
+    <i class="bi bi-instagram"></i> @GCA
+  </span>
+</div>
+
+<!-- Navigation Principal -->
+<nav class="navbar navbar-expand-lg sticky-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo GCA"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown">Servicios</a>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="geofisica.html">Geofísica</a></li>
+              <li><a class="dropdown-item" href="geotecnia.html">Geotecnia</a></li>
+              <li><a class="dropdown-item" href="geotermia.html">Geotermia</a></li>
+              <li><a class="dropdown-item" href="licencias.html">Licencias de Construcción</a></li>                     
+              <li><a class="dropdown-item" href="medio-ambiente.html">Medio Ambiente</a></li>
+              <li><a class="dropdown-item" href="agua.html">Recursos Hídricos</a></li>             
+              <li><a class="dropdown-item active" href="sig.html">SIG</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Cabecera con imagen destacada -->
+<section class="hero-section" style="background-image: linear-gradient(rgba(46, 125, 50, 0.7), rgba(46, 125, 50, 0.7)), url('Imagenes/sig-geociencias.jpg');">
+  <div class="container text-center text-white">
+    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">SISTEMAS DE INFORMACIÓN GEOGRÁFICA</h1>
+    <p class="lead" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); max-width: 800px; margin: 0 auto;">
+      Soluciones geoespaciales para geología, geomorfología, hidrología y ciencias de la tierra
+    </p>
+  </div>
+</section>
+
+<!-- Barra de navegación interna -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white secondary-nav">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGIS">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarGIS">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#definicion">¿Qué es?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#metodos">Métodos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologías</a></li>
+        <li class="nav-item"><a class="nav-link" href="#casos">Casos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#normativa">Normativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<main class="container py-5">
+  <!-- Definición -->
+  <section id="definicion" class="mb-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="fw-bold border-bottom pb-2 border-gis" style="color: #2E7D32;">SIG en Geociencias</h2>
+        <p>Los Sistemas de Información Geográfica (SIG) son herramientas fundamentales para la captura, almacenamiento, análisis y visualización de datos geoespaciales en las ciencias de la tierra.</p>
+        <p>En el contexto de las geociencias permiten:</p>
+        <ul>
+          <li>Integrar información geológica, geomorfológica e hidrológica</li>
+          <li>Modelar procesos naturales en el espacio y tiempo</li>
+          <li>Analizar relaciones espaciales entre variables geocientíficas</li>
+          <li>Tomar decisiones basadas en evidencia geoespacial</li>
+        </ul>
+        <div class="alert alert-success mt-3">
+          <strong>Ventaja clave:</strong> Capacidad para superponer múltiples capas de información y realizar análisis multicriterio para estudios geocientíficos.
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="Imagenes/sig-geologia.jpg" alt="SIG aplicado a geociencias" class="img-fluid rounded shadow">
+        <figcaption class="text-center mt-2 text-muted">Figura 1. Integración de datos geológicos en ambiente SIG</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aplicaciones -->
+  <section id="aplicaciones" class="mb-5 py-4 bg-gis-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-gis" style="color: #2E7D32;">Aplicaciones en Geociencias</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <i class="bi bi-geo-alt-fill gis-icon"></i>
+            <h4 style="color: #2E7D32;">Geología y Geomorfología</h4>
+            <ul>
+              <li>Cartografía geológica digital</li>
+              <li>Análisis de estructuras tectónicas</li>
+              <li>Modelos digitales de terreno</li>
+              <li>Estudios de procesos superficiales</li>
+              <li>Zonificación de amenazas geológicas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <i class="bi bi-droplet-fill gis-icon"></i>
+            <h4 style="color: #2E7D32;">Hidrología e Hidrogeología</h4>
+            <ul>
+              <li>Delimitación de cuencas</li>
+              <li>Modelos de flujo subterráneo</li>
+              <li>Análisis de redes de drenaje</li>
+              <li>Evaluación de acuíferos</li>
+              <li>Rondas hídricas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <i class="bi bi-tree-fill gis-icon"></i>
+            <h4 style="color: #2E7D32;">Geoecología y Ambiente</h4>
+            <ul>
+              <li>Evaluación de impacto ambiental</li>
+              <li>Estudios de biodiversidad</li>
+              <li>Análisis de cambio de coberturas</li>
+              <li>Modelos de conectividad ecológica</li>
+              <li>Ordenamiento territorial</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <i class="bi bi-magnet-fill gis-icon"></i>
+            <h4 style="color: #2E7D32;">Geofísica y Exploración</h4>
+            <ul>
+              <li>Integración de datos geofísicos</li>
+              <li>Modelos 3D del subsuelo</li>
+              <li>Análisis de potencial mineral</li>
+              <li>Interpretación conjunta de datos</li>
+              <li>Planeación de campañas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <i class="bi bi-clipboard-data gis-icon"></i>
+            <h4 style="color: #2E7D32;">Riesgos Geológicos</h4>
+            <ul>
+              <li>Mapas de susceptibilidad</li>
+              <li>Modelos predictivos</li>
+              <li>Análisis multicriterio</li>
+              <li>Evaluación de vulnerabilidad</li>
+              <li>Planes de gestión del riesgo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <i class="bi bi-building gis-icon"></i>
+            <h4 style="color: #2E7D32;">Geología Urbana</h4>
+            <ul>
+              <li>Bases de datos geoespaciales</li>
+              <li>Geotecnia aplicada</li>
+              <li>Estudios de capacidad de carga</li>
+              <li>Planeación urbana</li>
+              <li>Infraestructura sostenible</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Métodos -->
+  <section id="metodos" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-gis" style="color: #2E7D32;">Métodos y Técnicas SIG</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #2E7D32; color: white;">
+            <h5 class="mb-0">Análisis Espacial</h5>
+          </div>
+          <div class="card-body">
+            <span class="badge method-badge mb-2">Superposición</span>
+            <span class="badge method-badge mb-2">Buffer</span>
+            <span class="badge method-badge mb-2">Interpolación</span>
+            <p class="mt-2">Técnicas para extraer información de patrones espaciales:</p>
+            <ul class="small">
+              <li>Álgebra de mapas</li>
+              <li>Estadística espacial</li>
+              <li>Análisis de proximidad</li>
+              <li>Densidad kernel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #2E7D32; color: white;">
+            <h5 class="mb-0">Modelización</h5>
+          </div>
+          <div class="card-body">
+            <span class="badge method-badge mb-2">Multicriterio</span>
+            <span class="badge method-badge mb-2">Predictiva</span>
+            <span class="badge method-badge mb-2">Hidrológica</span>
+            <p class="mt-2">Desarrollo de modelos geoespaciales:</p>
+            <ul class="small">
+              <li>AHP (Proceso Analítico Jerárquico)</li>
+              <li>Regresión espacial</li>
+              <li>Modelos de susceptibilidad</li>
+              <li>Simulación de escenarios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #2E7D32; color: white;">
+            <h5 class="mb-0">Teledetección</h5>
+          </div>
+          <div class="card-body">
+            <span class="badge method-badge mb-2">NDVI</span>
+            <span class="badge method-badge mb-2">Clasificación</span>
+            <span class="badge method-badge mb-2">LiDAR</span>
+            <p class="mt-2">Procesamiento de imágenes:</p>
+            <ul class="small">
+              <li>Índices espectrales</li>
+              <li>Segmentación de imágenes</li>
+              <li>Detección de cambios</li>
+              <li>Análisis multitemporal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <div class="card-header" style="background-color: #2E7D32; color: white;">
+            <h5 class="mb-0">Visualización</h5>
+          </div>
+          <div class="card-body">
+            <span class="badge method-badge mb-2">3D</span>
+            <span class="badge method-badge mb-2">WebGIS</span>
+            <span class="badge method-badge mb-2">StoryMaps</span>
+            <p class="mt-2">Presentación de resultados:</p>
+            <ul class="small">
+              <li>Mapas temáticos</li>
+              <li>Modelos digitales de elevación</li>
+              <li>Visualización interactiva</li>
+              <li>Dashboards geográficos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tecnologías -->
+  <section id="tecnologias" class="mb-5 py-4 bg-gis-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-gis" style="color: #2E7D32;">Tecnologías que Utilizamos</h2>
+    
+    <div class="text-center my-4">
+      <h4 class="mb-4">Software Especializado</h4>
+      <div class="d-flex flex-wrap justify-content-center">
+        <img src="Imagenes/logo-arcgis.png" alt="ArcGIS" class="tech-logo">
+        <img src="Imagenes/logo-qgis.png" alt="QGIS" class="tech-logo">
+        <img src="Imagenes/logo-global-mapper.png" alt="Global Mapper" class="tech-logo">
+        <img src="Imagenes/logo-envi.png" alt="ENVI" class="tech-logo">
+        <img src="Imagenes/logo-python.png" alt="Python" class="tech-logo">
+        <img src="Imagenes/logo-r.png" alt="R" class="tech-logo">
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #2E7D32; color: white;">
+            <h5 class="mb-0">Plataformas Principales</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>ArcGIS Suite:</strong> Pro, Online, Enterprise</li>
+              <li><strong>QGIS:</strong> Con plugins avanzados (SAGA, GRASS)</li>
+              <li><strong>Google Earth Engine:</strong> Para análisis a gran escala</li>
+              <li><strong>Global Mapper:</strong> Procesamiento LiDAR</li>
+              <li><strong>ENVI:</strong> Análisis espectral avanzado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #2E7D32; color: white;">
+            <h5 class="mb-0">Desarrollo Personalizado</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Python:</strong> ArcPy, GDAL, Pandas, Scikit-learn</li>
+              <li><strong>R:</strong> Spatial, Raster, SF</li>
+              <li><strong>JavaScript:</strong> Leaflet, Mapbox, OpenLayers</li>
+              <li><strong>Bases de datos:</strong> PostGIS, SpatiaLite</li>
+              <li><strong>WebGIS:</strong> ArcGIS Online, GeoServer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos de Estudio -->
+  <section id="casos" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-gis" style="color: #2E7D32;">Casos de Estudio en Colombia</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-paez.jpg" class="img-fluid rounded-start h-100" alt="Macizo Colombiano" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #2E7D32;">Macizo Colombiano</h5>
+                <p><strong>Enfoque:</strong> Zonificación de amenazas geológicas</p>
+                <p><strong>Técnicas:</strong> Modelo AHP con 12 variables</p>
+                <p><strong>Resultados:</strong> Mapa de susceptibilidad a escala 1:25.000</p>
+                <a href="#" class="btn btn-sm" style="background-color: #2E7D32; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-bogota-sig.jpg" class="img-fluid rounded-start h-100" alt="Bogotá" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #2E7D32;">Bogotá D.C.</h5>
+                <p><strong>Enfoque:</strong> Geología urbana y planificación</p>
+                <p><strong>Técnicas:</strong> Análisis multicapa con 18 capas</p>
+                <p><strong>Resultados:</strong> Sistema de apoyo a decisiones para POT</p>
+                <a href="#" class="btn btn-sm" style="background-color: #2E7D32; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-amazonas-sig.jpg" class="img-fluid rounded-start h-100" alt="Amazonas" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #2E7D32;">Amazonía Colombiana</h5>
+                <p><strong>Enfoque:</strong> Cambio de coberturas 1990-2020</p>
+                <p><strong>Técnicas:</strong> Clasificación supervisada Landsat</p>
+                <p><strong>Resultados:</strong> Pérdida de 1.2M ha de bosque primario</p>
+                <a href="#" class="btn btn-sm" style="background-color: #2E7D32; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="Imagenes/caso-mineria-sig.jpg" class="img-fluid rounded-start h-100" alt="Minería" style="object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 style="color: #2E7D32;">Zona Minera Antioquia</h5>
+                <p><strong>Enfoque:</strong> Potencial mineral con SIG</p>
+                <p><strong>Técnicas:</strong> Integración datos geofísicos y geoquímicos</p>
+                <p><strong>Resultados:</strong> 3 áreas con alto potencial aurífero</p>
+                <a href="#" class="btn btn-sm" style="background-color: #2E7D32; color: white;">Ver detalles <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Normativa -->
+  <section id="normativa" class="mb-5 py-4 bg-gis-light rounded">
+    <h2 class="fw-bold border-bottom pb-2 border-gis" style="color: #2E7D32;">Marco Normativo en Colombia</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #2E7D32; color: white;">
+            <h5 class="mb-0">Estándares Nacionales</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Resolución 1081 de 2021 (IGAC):</strong> Especificaciones técnicas para productos geoespaciales</li>
+              <li><strong>Decreto 1076 de 2015:</strong> Reglamenta uso de información geográfica</li>
+              <li><strong>Ley 1753 de 2015:</strong> Política de desarrollo de información geográfica</li>
+              <li><strong>IDEAM:</strong> Lineamientos para estudios ambientales con SIG</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header" style="background-color: #2E7D32; color: white;">
+            <h5 class="mb-0">Infraestructura de Datos</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>IDECA:</strong> Infraestructura de Datos Espaciales de Bogotá</li>
+              <li><strong>SNIEG:</strong> Sistema Nacional de Información Estadística y Geográfica</li>
+              <li><strong>IDE Colombia:</strong> Portal nacional de geodatos</li>
+              <li><strong>Estándares OGC:</strong> WMS, WFS, CSW implementados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header" style="background-color: #2E7D32; color: white;">
+        <h5 class="mb-0">Fuentes Oficiales de Datos</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h6>IGAC</h6>
+            <p class="small">Cartografía básica y temática</p>
+          </div>
+          <div class="col-md-4">
+            <h6>SGC</h6>
+            <p class="small">Geología, geofísica y amenazas</p>
+          </div>
+          <div class="col-md-4">
+            <h6>IDEAM</h6>
+            <p class="small">Hidrología y climatología</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="mb-5">
+    <h2 class="fw-bold border-bottom pb-2 border-gis" style="color: #2E7D32;">Servicios que Ofrecemos</h2>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <h4 style="color: #2E7D32;">Desarrollo de Proyectos SIG</h4>
+            <ul>
+              <li>Diseño de geodatabases</li>
+              <li>Digitalización y edición</li>
+              <li>Análisis espacial avanzado</li>
+              <li>Modelos predictivos</li>
+              <li>Automatización de procesos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <h4 style="color: #2E7D32;">Capacitación</h4>
+            <ul>
+              <li>Cursos básicos y avanzados</li>
+              <li>Talleres especializados</li>
+              <li>Capacitación in company</li>
+              <li>Soporte técnico</li>
+              <li>Desarrollo de manuales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <h4 style="color: #2E7D32;">Sistemas WebGIS</h4>
+            <ul>
+              <li>Plataformas de consulta</li>
+              <li>Visualizadores interactivos</li>
+              <li>Aplicaciones móviles</li>
+              <li>Integración con bases de datos</li>
+              <li>Soluciones a medida</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <h4 style="color: #2E7D32;">Teledetección</h4>
+            <ul>
+              <li>Procesamiento de imágenes</li>
+              <li>Clasificación de coberturas</li>
+              <li>Análisis multitemporal</li>
+              <li>Índices espectrales</li>
+              <li>LiDAR y drones</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <h4 style="color: #2E7D32;">Cartografía</h4>
+            <ul>
+              <li>Mapas temáticos</li>
+              <li>Modelos digitales</li>
+              <li>Cartografía geológica</li>
+              <li>Mapas de amenazas</li>
+              <li>Infografías geoespaciales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 gis-card">
+          <div class="card-body">
+            <h4 style="color: #2E7D32;">Consultoría</h4>
+            <ul>
+              <li>Diseño de metodologías</li>
+              <li
