@@ -1,30 +1,31 @@
-cnia<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GCA - Geoconsultores Asociados</title>
+  <title>Proyectos | GCA - Geoconsultores Asociados</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  
-  <!-- Google Fonts: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #FFFFFF;
-      color: #594E40;
+      color: #333;
+      padding-top: 112px;
     }
     .top-bar {
-      background-color: #C0B59B;
+      background-color: #5D4037;
       padding: 5px 0;
       font-size: 14px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
+      color: white;
     }
     .navbar {
       background-color: #ffffff;
@@ -33,45 +34,64 @@ cnia<!DOCTYPE html>
     .navbar-brand img {
       height: 80px;
     }
-    .sticky-top {
-      top: 0;
+    .sticky-nav {
+      position: fixed;
+      top: 24px;
+      width: 100%;
       z-index: 1020;
+    }
+    .secondary-nav {
+      position: sticky;
+      top: 112px;
+      z-index: 1010;
+      background-color: white;
+    }
+    .footer {
+      background-color: #5D4037;
+      color: #fff;
+      padding: 40px 0;
     }
     .hero-section {
       position: relative;
       width: 100%;
-      height: 90vh;
+      height: 60vh;
       background-size: cover;
       background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: -112px;
     }
-    .service-card {
-      height: 100%;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      padding: 20px;
-      text-align: center;
+    .project-card {
       transition: all 0.3s ease;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .service-card:hover {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
-    .team-section, .values-section {
-      padding: 60px 0;
-      background-color: #f4f4f4;
+    .project-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 2;
     }
-    .footer {
-      background-color: #594E40;
-      color: #fff;
-      padding: 40px 0;
-    }    
-    .whatsapp-button {
+    .project-img {
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .project-card:hover .project-img {
+      transform: scale(1.05);
+    }
+    .whatsapp-btn {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: linear-gradient(to right, #594E40, #C0B59B);
+      background-color: #25D366;
       color: white;
       border-radius: 50%;
       width: 60px;
@@ -81,214 +101,449 @@ cnia<!DOCTYPE html>
       justify-content: center;
       font-size: 30px;
       z-index: 1000;
-    }    
-    .service-icon {
-      width: 300px; /* Ajusta el ancho que prefieras */
-      height: 300px; /* Ajusta el alto que prefieras */
-      object-fit: contain; /* Para que no se deformen */
-      margin: 0 auto 20px auto; /* Centrado y espacio abajo */
-      display: block;
-    }    
-    .division-imagen-parallax {
-      position: relative;
-      width: 100%;
-      height: 300px; /* puedes ajustar el alto si quieres */
-      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
-    .parallax {
-      background-image: url('division-imagen.png'); /* Asegúrate que sea la ruta correcta */
-      height: 100%;
-      background-attachment: fixed; /* Hace el efecto parallax */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background-color: #128C7E;
+    }
+    .badge-geologia {
+      background-color: #8D6E63;
+    }
+    .badge-geomorfologia {
+      background-color: #795548;
+    }
+    .badge-hidro {
+      background-color: #2196F3;
+    }
+    .badge-geofisica {
+      background-color: #673AB7;
+    }
+    .badge-riesgos {
+      background-color: #F44336;
+    }
+    .badge-geotecnia {
+      background-color: #607D8B;
+    }
+    .badge-ambiente {
+      background-color: #4CAF50;
+    }
+    .badge-geotermia {
+      background-color: #FF9800;
+    }
+    .filter-btn.active {
+      background-color: #5D4037;
+      color: white;
     }
   </style>
 </head>
 
-  
 <body>
 
-  
-  <!-- Top Bar -->
-  <div class="top-bar text-center">
-    <span><i class="bi bi-envelope"></i> gcageoconsultoresasociados@gmail.com | <i class="bi bi-facebook"></i> /GCA | <i class="bi bi-instagram"></i> @GCA</span>
-  </div>
+<!-- Top Bar -->
+<div class="top-bar text-center">
+  <span>
+    <i class="bi bi-telephone"></i> +57 300 123 4567 |
+    <i class="bi bi-geo-alt"></i> Bogotá, Colombia |
+    <i class="bi bi-envelope"></i> info@geoconsultores.com |
+    <i class="bi bi-facebook"></i> /GCA |
+    <i class="bi bi-instagram"></i> @GCA
+  </span>
+</div>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo GCA"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown">Servicios</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="geotermia.html">Geotermia</a></li>
-              <li><a class="dropdown-item" href="recursos-hidricos.html">Recursos Hídricos</a></li>
-              <li><a class="dropdown-item" href="medio-ambiente.html">Medio Ambiente</a></li>
-              <li><a class="dropdown-item" href="geotecnia.html">Geotecnia</a></li>
+<!-- Navigation Principal -->
+<nav class="navbar navbar-expand-lg sticky-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo GCA"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown">Servicios</a>
+          <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="geofisica.html">Geofísica</a></li>
+              <li><a class="dropdown-item" href="geotecnia.html">Geotecnia</a></li>
+              <li><a class="dropdown-item" href="geotermia.html">Geotermia</a></li>
+              <li><a class="dropdown-item" href="licencias.html">Licencias de Construcción</a></li>                     
+              <li><a class="dropdown-item" href="medio-ambiente.html">Medio Ambiente</a></li>
+              <li><a class="dropdown-item" href="agua.html">Recursos Hídricos</a></li>             
               <li><a class="dropdown-item" href="sig.html">SIG</a></li>
+              <li><a class="dropdown-item" href="avr.html">AVR</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="proyectos.html">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Cabecera con imagen destacada -->
+<section class="hero-section" style="background-image: linear-gradient(rgba(93, 64, 55, 0.7), rgba(93, 64, 55, 0.7)), url('Imagenes/proyectos-hero.jpg');">
+  <div class="container text-center text-white">
+    <h1 class="fw-bold display-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">NUESTROS PROYECTOS</h1>
+    <p class="lead" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); max-width: 800px; margin: 0 auto;">
+      Experiencia demostrada en estudios geocientíficos aplicados a diversos sectores
+    </p>
+  </div>
+</section>
+
+<!-- Barra de navegación interna -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white secondary-nav">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center w-100">
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn active" data-filter="all">Todos</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="geologia">Geología</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="geomorfologia">Geomorfología</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="hidrogeologia">Hidrogeología</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="hidrologia">Hidrología</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="geofisica">Geofísica</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="geotecnia">Geotecnia</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="geotermia">Geotermia</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="riesgos">Riesgos Naturales</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="avr">AVR</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="ambiente">Medio Ambiente</button>
+      <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="geoecosistema">Geo-Ecosistema</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<main class="container py-5">
+  <!-- Proyectos destacados -->
+  <section class="mb-5">
+    <div class="row g-4" id="projects-container">
+      <!-- Proyecto 1 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="geologia hidrogeologia">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-geologia">Geología</span>
+          <img src="Imagenes/proyectos/geologia-acuifero.jpg" class="card-img-top project-img" alt="Cartografía geológica">
+          <div class="card-body">
+            <h5 class="card-title">Caracterización de Acuíferos en La Guajira</h5>
+            <p class="card-text">Estudio hidrogeológico para identificación de reservorios subterráneos en zona árida.</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> Gobernación de La Guajira</li>
+              <li><strong>Año:</strong> 2022</li>
+              <li><strong>Técnicas:</strong> ERT, sondeos, modelación MODFLOW</li>
             </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proyecto 2 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="geomorfologia riesgos avr">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-riesgos">Riesgos</span>
+          <img src="Imagenes/proyectos/geomorfologia-bogota.jpg" class="card-img-top project-img" alt="Estudio geomorfológico">
+          <div class="card-body">
+            <h5 class="card-title">AVR para Quebradas Urbanas en Bogotá</h5>
+            <p class="card-text">Evaluación de amenazas por movimientos en masa en 12 quebradas de la ciudad.</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> EAAB</li>
+              <li><strong>Año:</strong> 2023</li>
+              <li><strong>Técnicas:</strong> LiDAR, modelación SLIDE</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proyecto 3 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="geofisica geotecnia">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-geofisica">Geofísica</span>
+          <img src="Imagenes/proyectos/geofisica-tunel.jpg" class="card-img-top project-img" alt="Estudio geofísico">
+          <div class="card-body">
+            <h5 class="card-title">Estudio Geofísico para Túnel de La Línea</h5>
+            <p class="card-text">Caracterización de fracturas y zonas débiles mediante sísmica de reflexión.</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> ANI</li>
+              <li><strong>Año:</strong> 2021</li>
+              <li><strong>Técnicas:</strong> Sísmica 2D, GPR, tomografía</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proyecto 4 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="hidrologia avr">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-hidro">Hidrología</span>
+          <img src="Imagenes/proyectos/hidrologia-meta.jpg" class="card-img-top project-img" alt="Estudio hidrológico">
+          <div class="card-body">
+            <h5 class="card-title">Modelación Hidrológica Cuenca Río Meta</h5>
+            <p class="card-text">Simulación de escenarios de inundación para planificación territorial.</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> Cormacarena</li>
+              <li><strong>Año:</strong> 2022</li>
+              <li><strong>Técnicas:</strong> HEC-HMS, HEC-RAS</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proyecto 5 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="geotermia geologia">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-geotermia">Geotermia</span>
+          <img src="Imagenes/proyectos/geotermia-paipa.jpg" class="card-img-top project-img" alt="Estudio geotérmico">
+          <div class="card-body">
+            <h5 class="card-title">Exploración Geotérmica en Paipa</h5>
+            <p class="card-text">Evaluación del potencial para generación eléctrica y usos directos.</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> MinEnergía</li>
+              <li><strong>Año:</strong> 2023</li>
+              <li><strong>Técnicas:</strong> Magnetotelúrica, geoquímica</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proyecto 6 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="ambiente geoecosistema">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-ambiente">Ambiente</span>
+          <img src="Imagenes/proyectos/geoecosistema-páramo.jpg" class="card-img-top project-img" alt="Estudio geoecosistema">
+          <div class="card-body">
+            <h5 class="card-title">Evaluación Geoecológica Páramo de Santurbán</h5>
+            <p class="card-text">Análisis integrado de componentes geológicos y ecológicos.</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> Corpoboyacá</li>
+              <li><strong>Año:</strong> 2021</li>
+              <li><strong>Técnicas:</strong> SIG, teledetección, campo</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proyecto 7 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="geotecnia riesgos">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-geotecnia">Geotecnia</span>
+          <img src="Imagenes/proyectos/geotecnia-medellin.jpg" class="card-img-top project-img" alt="Estudio geotécnico">
+          <div class="card-body">
+            <h5 class="card-title">Estabilidad de Taludes en Medellín</h5>
+            <p class="card-text">Evaluación y diseño de medidas para 15 puntos críticos.</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> Alcaldía de Medellín</li>
+              <li><strong>Año:</strong> 2022</li>
+              <li><strong>Técnicas:</strong> Perforaciones, ensayos lab, modelación</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proyecto 8 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="geomorfologia hidrologia">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-geomorfologia">Geomorfología</span>
+          <img src="Imagenes/proyectos/geomorfologia-amazonas.jpg" class="card-img-top project-img" alt="Estudio geomorfológico">
+          <div class="card-body">
+            <h5 class="card-title">Dinámica Fluvial Río Amazonas</h5>
+            <p class="card-text">Análisis de cambios en el cauce y zonas inundables (1990-2020).</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> Sinchi</li>
+              <li><strong>Año:</strong> 2023</li>
+              <li><strong>Técnicas:</strong> Imágenes satelitales, SIG</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proyecto 9 -->
+      <div class="col-md-6 col-lg-4 project-item" data-category="avr hidrogeologia">
+        <div class="card h-100 project-card">
+          <span class="badge project-badge badge-riesgos">AVR</span>
+          <img src="Imagenes/proyectos/avr-acueducto.jpg" class="card-img-top project-img" alt="Estudio AVR">
+          <div class="card-body">
+            <h5 class="card-title">AVR para Acueducto de Manizales</h5>
+            <p class="card-text">Evaluación de vulnerabilidad ante amenazas naturales.</p>
+            <ul class="list-unstyled small">
+              <li><strong>Cliente:</strong> Aguas de Manizales</li>
+              <li><strong>Año:</strong> 2021</li>
+              <li><strong>Técnicas:</strong> Análisis multicriterio, SIG</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-white">
+            <a href="#" class="btn btn-sm btn-outline-dark">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5">
+      <button class="btn btn-lg" style="background-color: #5D4037; color: white;">Ver más proyectos</button>
+    </div>
+  </section>
+
+  <!-- Estadísticas -->
+  <section class="mb-5 py-4 rounded" style="background-color: #EFEBE9;">
+    <h2 class="fw-bold text-center mb-4" style="color: #5D4037;">Nuestra Experiencia en Cifras</h2>
+    
+    <div class="row text-center">
+      <div class="col-md-3 mb-4">
+        <div class="display-4 fw-bold" style="color: #8D6E63;">150+</div>
+        <p class="lead">Proyectos completados</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="display-4 fw-bold" style="color: #8D6E63;">25</div>
+        <p class="lead">Departamentos cubiertos</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="display-4 fw-bold" style="color: #8D6E63;">12</div>
+        <p class="lead">Áreas de especialización</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="display-4 fw-bold" style="color: #8D6E63;">98%</div>
+        <p class="lead">Clientes satisfechos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clientes -->
+  <section class="mb-5">
+    <h2 class="fw-bold text-center mb-4" style="color: #5D4037;">Clientes y Aliados</h2>
+    
+    <div class="row g-4">
+      <div class="col-6 col-md-3 text-center">
+        <img src="Imagenes/clientes/minambiente.png" alt="MinAmbiente" class="img-fluid" style="max-height: 80px;">
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="Imagenes/clientes/sgc.png" alt="SGC" class="img-fluid" style="max-height: 80px;">
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="Imagenes/clientes/ideam.png" alt="IDEAM" class="img-fluid" style="max-height: 80px;">
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="Imagenes/clientes/eaab.png" alt="EAAB" class="img-fluid" style="max-height: 80px;">
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="Imagenes/clientes/corpochivor.png" alt="Corpochivor" class="img-fluid" style="max-height: 80px;">
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="Imagenes/clientes/uniandes.png" alt="Uniandes" class="img-fluid" style="max-height: 80px;">
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="Imagenes/clientes/ecopetrol.png" alt="Ecopetrol" class="img-fluid" style="max-height: 80px;">
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="Imagenes/clientes/cerrejon.png" alt="Cerrejón" class="img-fluid" style="max-height: 80px;">
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="py-5" style="background-color: #5D4037; color: white;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>Geoconsultores Asociados</h5>
+        <p>Especialistas en estudios geocientíficos aplicados con más de 15 años de experiencia.</p>
+        <div class="social-icons">
+          <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Áreas de Especialización</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Geología y Geomorfología</a></li>
+          <li><a href="#" class="text-white">Hidrología e Hidrogeología</a></li>
+          <li><a href="#" class="text-white">Geofísica Aplicada</a></li>
+          <li><a href="#" class="text-white">Geotecnia y Riesgos</a></li>
+          <li><a href="#" class="text-white">Geo-Ecosistemas</a></li>
         </ul>
       </div>
+      <div class="col-md-4 mb-4">
+        <h5>Certificaciones</h5>
+        <div class="d-flex flex-wrap gap-3">
+          <img src="Imagenes/certificacion-iso.png" alt="ISO" style="height: 50px;">
+          <img src="Imagenes/certificacion-sgc.png" alt="SGC" style="height: 50px;">
+          <img src="Imagenes/certificacion-icontect.png" alt="ICONTEC" style="height: 50px;">
+        </div>
+        <div class="mt-3">
+          <p class="small">Acreditados para estudios técnicos ante autoridades ambientales y mineras.</p>
+        </div>
+      </div>
     </div>
-  </nav>
-<!-- Sección de servicio y descripcción -->
-  <section class="bienvenida text-center py-5">
-      <div class="container">
-          <h2>Geotecnia</h2>
-          <p>Evaluamos y gestionamos los recursos hídricos subterráneos y superficiales para el desarrollo sostenible de proyectos y el ecosistema.</p>
-          <p>Somos un grupo de profesionales especializados en áreas como Geología, Geomorfología, Geotecnia e Hidrogeología con amplia experiencia profesional en la elaboración de estudios geotécnicos empleando metodologías de análisis de amplio uso en el medio, obteniendo información primaria por diferentes medios como sondeos directos, información de sensores remotos y métodos indirectos (Geofísica) a partir de los cuales, producto de su análisis y procesamiento se definen modelos geológico geotécnicos para adelantar los diseños respectivos, lo cual lo habilita a ofrecer precios competitivos y ajustados al presupuesto del cliente.</p>
+    <hr class="my-4" style="border-color: #8D6E63;">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-0">© 2023 Geoconsultores Asociados. Todos los derechos reservados.</p>
       </div>
-  </section>
- 
-<!-- Sección de Servicios -->
-<section class="services py-5">
-  <div class="container">
-    <h2 class="mb-5 text-center">Nuestros Servicios</h2>
-    <div class="row g-4">
-      <div class="col-md-4 d-flex align-items-stretch">
-        <a href="geotermia.html" class="w-100 text-decoration-none">
-          <div class="card h-100 text-center shadow-sm">
-            <div class="p-4">
-              <img src="icon-geotermia.png" class="service-icon" alt="Geotermia">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Exploración</h5>
-              <p class="card-text">Desarrollamos modelos hidrogeológicos conceptuales y numéricos, cálculos de balance hídrico, pruebas de bombeo y estimaciones de reservas hídricas subterráneas.</p>
-            </div>
-          </div>
-        </a>
+      <div class="col-md-6 text-md-end">
+        <a href="#" class="text-white me-3">Política de privacidad</a>
+        <a href="#" class="text-white me-3">Términos de servicio</a>
+        <a href="#" class="text-white">Mapa del sitio</a>
       </div>
-
-      <div class="col-md-4 d-flex align-items-stretch">
-        <a href="agua.html" class="w-100 text-decoration-none">
-          <div class="card h-100 text-center shadow-sm">
-            <div class="p-4">
-              <img src="icon-recursos_hidricos.png" class="service-icon" alt="Recursos Hídricos">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Geofísica</h5>
-              <p class="card-text">Implementamos métodos de geoeléctrica y tomografías para identificar características hidrogeológicas esenciales para la gestión ambiental.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-4 d-flex align-items-stretch">
-        <a href="ambiente.html" class="w-100 text-decoration-none">
-          <div class="card h-100 text-center shadow-sm">
-            <div class="p-4">
-              <img src="icon-ambiente.png" class="service-icon" alt="Geo-Ecosistema">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Inventario de puntos de agua</h5>
-              <p class="card-text">Realizamos censos y evaluaciones de fuentes hídricas para planes de manejo y conservación.</p>                
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-4 d-flex align-items-stretch">
-        <a href="geotecnia.html" class="w-100 text-decoration-none">
-          <div class="card h-100 text-center shadow-sm">
-            <div class="p-4">
-              <img src="icon-geotecnia.png" class="service-icon" alt="Geotecnia">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">GIS aplicado a hidrogeología</h5>
-              <p class="card-text">Procesamos y analizamos datos geoespaciales para apoyar la gestión, monitoreo y conservación de recursos hídricos.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-4 d-flex align-items-stretch">
-        <a href="sig.html" class="w-100 text-decoration-none">
-          <div class="card h-100 text-center shadow-sm">
-            <div class="p-4">
-              <img src="icon-sig.png" class="service-icon" alt="SIG">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Análisis geomecánico de reservorios</h5>
-              <p class="card-text">Evaluamos la estabilidad y comportamiento de reservorios de agua subterránea para garantizar su aprovechamiento sostenible.</p>                               
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-4 d-flex align-items-stretch">
-        <a href="geofisica.html" class="w-100 text-decoration-none">
-          <div class="card h-100 text-center shadow-sm">
-            <div class="p-4">
-              <img src="icon-geofisica.png" class="service-icon" alt="Geofísica">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Acotamiento de Rondas Hídricas</h5>
-              <p class="card-text">Analisis geológico y geomorfológico de los cuerpos de agua, dinámica aluvial, cambios de cauce, entre otros.</p>                
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-4 d-flex align-items-stretch">
-        <a href="avr.html" class="w-100 text-decoration-none">
-          <div class="card h-100 text-center shadow-sm">
-            <div class="p-4">
-              <img src="icon-avr.png" class="service-icon" alt="AVR">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Amenaza, Vulnerabilidad y Riesgo</h5>
-              <p class="card-text">Identificamos, analizamos y gestionamos amenazas, vulnerabilidades y riesgos para garantizar el desarrollo seguro y sostenible de tus proyectos.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
     </div>
   </div>
-</section>
+</footer>
 
-<!-- División con Imagen - efecto Parallax -->
-<section class="division-imagen-parallax">
-  <div class="parallax"></div>
-</section>
+<!-- Botón WhatsApp -->
+<a href="https://wa.me/573001234567" target="_blank" class="whatsapp-btn">
+  <i class="bi bi-whatsapp"></i>
+</a>
 
+<!-- Scripts de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Seccion de información de proyectos -->
-
-  
-  <!-- Nuestro Equipo -->
-  <section class="team-section text-center">
-    <div class="container">
-      <h2>Nuestro Equipo</h2>
-      <p>Profesionales expertos comprometidos con brindar soluciones de alta calidad en cada proyecto.</p>
-    </div>
-  </section>
+<script>
+  // Filtrado de proyectos
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
     
-            
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2025 GCA Geociencias Aplicadas SAS. Todos los derechos reservados.</p>
-      <p>Especialistas en Geología, Geotecnia, Recursos Hídricos, Medio Ambiente y SIG.</p>
-    </div>
-  </footer>
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Quitar active de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Agregar active al botón clickeado
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        projectItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
 
-  <!-- Botón WhatsApp -->
-  <a href="https://wa.me/573057287714" class="whatsapp-button" target="_blank">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
+</html>
